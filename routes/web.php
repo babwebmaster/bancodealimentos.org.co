@@ -39,12 +39,23 @@ Route::group(['prefix'=>'beneficiarios'], function(){
 });
 Route::get('/contactanos', [PageController::class, 'contactUs'])->name('web.contactUs');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+Route::group(['middleware' => ['auth:sanctum', 'verified'], 'prefix' => 'dashboard'], function () {
+    Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::group(['namespace' => 'App\Http\Controllers\dashboard'], function () {
+
+        Route::resource('user', UserController::class);
+    });
+
 });

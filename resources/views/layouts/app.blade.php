@@ -39,22 +39,27 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased h-screen md:overflow-y-hidden">
-        <div class="bg-burbbles w-full h-full flex">
+    <body class="font-sans antialiased h-screen md:overflow-y-hidden  bg-gray-100">
+        <div class="w-full h-full md:flex">
             @livewire('navigation-menu')
             
             <!-- Page Content -->
-            <main class="main-dashboard overflow-y-scroll">
+            <main class="bg-lines main-dashboard overflow-y-scroll">
                 <x-jet-banner />
                 <!-- Page Heading -->
                 @if (isset($header))
-                    <header class="bg-white-transparent shadow">
+                    <header class="bg-slate-50 rounded-lg mx-2 my-2 shadow-lg">
                         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                             {{ $header }}
                         </div>
                     </header>
                 @endif
-                {{ $slot }}
+                {{ $slot }} 
+                <div class="my-4 mt-auto">
+                    <p class="text-xl font-bold text-center text-bab">
+                        © 2022 Banco de Alimentos de Bogotá
+                    </p>
+                </div>
             </main>
         </div>
         {{-- <div class="min-h-screen bg-gray-100">
