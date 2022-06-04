@@ -96,7 +96,7 @@ return [
     'Create New Team' => 'Crear un nuevo equipo',
     'Switch Teams' => 'Cambiar de equipo',
     'Dashboard' => 'Dashboard',
-    '' => '',
-    '' => '',
+    'User Profile' => 'Perfil del usuario',
+    'User Management' => 'Gestión de usuarios',
     '' => '',
 ];

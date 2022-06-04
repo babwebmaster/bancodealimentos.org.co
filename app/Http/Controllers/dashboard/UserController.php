@@ -15,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::paginate(10);
+        return view('dashboard.users.index-user', compact('users'));
     }
 
     /**
@@ -47,7 +48,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('dashboard.users.show-user', compact('user'));
     }
 
     /**
@@ -58,7 +59,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('dashboard.users.edit-user', compact('user'));
     }
 
     /**
@@ -81,6 +82,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
+        session()->flash('flash.bannerStyle', 'success');
+        return view('dashboard');
     }
 }

@@ -96,5 +96,6 @@ return [
     'Create New Team' => 'Create New Team',
     'Switch Teams' => 'Switch Teams',
     'Dashboard' => 'Dashboard',
-
+    'User Profile' => 'User Profile',
+    'User Management' => 'User Management'
 ];

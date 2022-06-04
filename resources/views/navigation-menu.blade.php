@@ -8,8 +8,7 @@
                     <a href="{{ route('dashboard') }}" class="sm:mx-auto">
                         <x-jet-application-mark class="block h-full w-auto logo_bab" />
                     </a>
-                </div>
-                
+                </div>       
                 <!-- Hamburger -->
                 <div class="-mr-2 flex items-center md:hidden ml-auto mr-5">
                     <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-50 hover:text-slate-400 focus:outline-none focus:text-slate-400 transition">
@@ -18,8 +17,7 @@
                             <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
-                </div>
-                
+                </div>              
                 <br class="hidden md:block">
                 <hr class="hidden md:block">
                 <!-- Settings Dropdown -->
@@ -130,6 +128,12 @@
                 <div class="hidden w-full text-slate-50 md:flex md:flex-col md:items-center md:my-5">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('messages.Dashboard') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                        {{ __('messages.User Profile') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
+                        {{ __('messages.User Management') }}
                     </x-jet-nav-link>
                 </div>
             </div>

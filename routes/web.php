@@ -54,7 +54,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'prefix' => 'dashboa
     })->name('dashboard');
 
     Route::group(['namespace' => 'App\Http\Controllers\dashboard'], function () {
-
         Route::resource('user', UserController::class);
     });
 
