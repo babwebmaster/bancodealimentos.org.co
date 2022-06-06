@@ -132,7 +132,7 @@
                     <x-jet-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                         {{ __('messages.User Profile') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
+                    <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index') || request()->routeIs('user.show') || request()->routeIs('user.create') || request()->routeIs('user.edit')">
                         {{ __('messages.User Management') }}
                     </x-jet-nav-link>
                 </div>

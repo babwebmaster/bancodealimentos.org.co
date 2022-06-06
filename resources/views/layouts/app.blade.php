@@ -33,13 +33,13 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased h-screen md:overflow-y-hidden  bg-gray-100">
+        
         <div class="w-full h-full md:flex">
             @livewire('navigation-menu')
             
@@ -79,9 +79,10 @@
                 {{ $slot }}
             </main>
         </div> --}}
-
         @stack('modals')
-
+        <!-- sweet scripts-->
+        @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+         <!-- sweet scripts end-->
         @livewireScripts
     </body>
 </html>

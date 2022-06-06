@@ -5,6 +5,8 @@ namespace App\Http\Controllers\dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
 
 class UserController extends Controller
 {
@@ -26,7 +28,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $user = new User();
+        return view('dashboard.users.create-user', compact('user'));
     }
 
     /**
@@ -37,7 +40,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|min:3|max:50|string',
+            'email' => 'required|string|email',
+            'password' => 'required|string|min:8',
+            'password_confirm' => 'required|same:password'
+        ]);
+        $password =Hash::make($request->password);
+        $data = array_merge($request->all(),['terms'=>'accepted','password' => $password]);
+        User::create($data);
+        session()->flash('flash.banner', 'Usuario Creado Correctamente!');
+        session()->flash('flash.bannerStyle', 'success');
+        return to_route('user.index');
     }
 
     /**
@@ -59,6 +73,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        session()->flash('flash.banner', 'Usuario Editado Correctamente!');
+        session()->flash('flash.bannerStyle', 'success');
         return view('dashboard.users.edit-user', compact('user'));
     }
 
@@ -71,7 +87,14 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|min:3|max:50|string',
+            'email' => 'required|string|email',
+        ]);
+        $user->update($validated);
+        session()->flash('flash.banner', 'Usuario Editado Correctamente!');
+        session()->flash('flash.bannerStyle', 'success');
+        return to_route('user.index');
     }
 
     /**
@@ -81,10 +104,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
-    {
+    { 
         $user->delete();
         session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
         session()->flash('flash.bannerStyle', 'success');
-        return view('dashboard');
+        return to_route("user.index");
     }
+
 }

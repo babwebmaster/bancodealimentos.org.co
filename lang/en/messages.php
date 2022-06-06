@@ -97,5 +97,10 @@ return [
     'Switch Teams' => 'Switch Teams',
     'Dashboard' => 'Dashboard',
     'User Profile' => 'User Profile',
-    'User Management' => 'User Management'
+    'User Management' => 'User Management',
+    //delete user
+    'Are you sure you want to delete this user?' => 'Are you sure you want to delete this user?',
+    'If you delete this, it will be gone forever.' => 'If you delete this, it will be gone forever.',
+    //create User
+    'User Name' => 'User Name'
 ];
