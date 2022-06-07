@@ -73,8 +73,6 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        session()->flash('flash.banner', 'Usuario Editado Correctamente!');
-        session()->flash('flash.bannerStyle', 'success');
         return view('dashboard.users.edit-user', compact('user'));
     }
 

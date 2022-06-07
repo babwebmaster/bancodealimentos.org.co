@@ -101,6 +101,8 @@ return [
     'Are you sure you want to delete this user?' => '¿Está seguro de que quiere eliminar este usuario?',
     'If you delete this, it will be gone forever.' => 'Si borras esto, desaparecerá para siempre.',
     //create User
-    'User Name' => 'Nombre de Usuario'
+    'User Name' => 'Nombre de Usuario',
+    //edit User
+    'Edit User' => 'Editar Usuario'
 
 ];

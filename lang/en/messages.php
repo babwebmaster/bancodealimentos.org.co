@@ -102,5 +102,7 @@ return [
     'Are you sure you want to delete this user?' => 'Are you sure you want to delete this user?',
     'If you delete this, it will be gone forever.' => 'If you delete this, it will be gone forever.',
     //create User
-    'User Name' => 'User Name'
+    'User Name' => 'User Name',
+    //edit User
+    'Edit User' => 'Edit User'
 ];
