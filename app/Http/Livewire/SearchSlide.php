@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\User;
+use App\Models\web\SlideMain;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class SearchUser extends Component
+class SearchSlide extends Component
 {
     use WithPagination;
     public $search;
@@ -14,9 +14,9 @@ class SearchUser extends Component
     public function render()
     {
         $search = '%'.$this->search.'%';
-        return view('livewire.search-user',[
-            'users' => User::where('name','LIKE', $search)->orWhere('email','LIKE', $search)->paginate(10)
+        return view('livewire.search-slide',[
+            'sliders' => SlideMain::where('name','LIKE', $search)->paginate(10)
         ]);
-        
+        return view('livewire.search-slide');
     }
 }

@@ -103,6 +103,26 @@ return [
     //create User
     'User Name' => 'Nombre de Usuario',
     //edit User
-    'Edit User' => 'Editar Usuario'
-
+    'Edit User' => 'Editar Usuario',
+    //show user
+    'All Users' => 'Todos los usuarios',
+    'Create New User' => 'Crear nuevo usuario',
+    'Search' => 'Buscar',
+    'Photo Profile' => 'Foto de perfil',
+    'Actions' => 'Acciones',
+    'Carousel' => 'Carrusel',
+    // sliders
+    'All sliders' => 'Todos los sliders',
+    'Create New Slide' => 'Crear Slide',
+    'Content' => 'Contenido',
+    'Created_at' => 'Creación',
+    'Updated_at' => 'Actualización',
+    'Show' => 'Ver',
+    'Edit' => 'Editar',
+    'Delete' => 'Eliminar',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
 ];

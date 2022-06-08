@@ -135,6 +135,9 @@
                     <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index') || request()->routeIs('user.show') || request()->routeIs('user.create') || request()->routeIs('user.edit')">
                         {{ __('messages.User Management') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('slide.index') }}" :active="request()->routeIs('slide.index') || request()->routeIs('slide.show') || request()->routeIs('slide.create') || request()->routeIs('slide.edit')">
+                        {{ __('messages.Carousel') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
             
@@ -217,6 +220,15 @@
                 </div>
                 <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('messages.Dashboard') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                    {{ __('messages.User Profile') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index') || request()->routeIs('user.show') || request()->routeIs('user.create') || request()->routeIs('user.edit')">
+                    {{ __('messages.User Management') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('slide.index') }}" :active="request()->routeIs('slide.index') || request()->routeIs('slide.show') || request()->routeIs('slide.create') || request()->routeIs('slide.edit')">
+                    {{ __('messages.Carousel') }}
                 </x-jet-responsive-nav-link>
             </div>
         </div>

@@ -104,5 +104,28 @@ return [
     //create User
     'User Name' => 'User Name',
     //edit User
-    'Edit User' => 'Edit User'
+    'Edit User' => 'Edit User',
+    //show user
+    'All Users' => 'All Users',
+    'Create New User' => 'Create New User',
+    'Search' => 'Search',
+    'Photo Profile' => 'Photo Profile',
+    'Name' => 'Name',
+    'Email' => 'Email',
+    'Actions' => 'Actions',
+    'Carousel' => 'Carousel',
+    // sliders
+    'All sliders' => 'All sliders',
+    'Create New Slide' => 'Create New Slide',
+    'Content' => 'Content',
+    'Created_at' => 'Created',
+    'Updated_at' => 'Updated',
+    'Show' => 'Show',
+    'Edit' => 'Edit',
+    'Delete' => 'Delete',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
 ];
