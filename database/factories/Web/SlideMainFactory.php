@@ -18,8 +18,14 @@ class SlideMainFactory extends Factory
     {
         return [
             'name'=>$this->faker->word,
-            'content'=>$this->faker->imageUrl(1920,700),
-            'status'=>rand(0,1)
+            'content_desktop'=>$this->faker->imageUrl(1920,700),
+            'content_mobile'=>$this->faker->imageUrl(778,778),
+            'status'=>$this->generateRandomStatus()
         ];
+    }
+    public function generateRandomStatus(){
+        $numberRandom = rand(0,1);
+        $statusRandom = $numberRandom == 1?'yes':'not';
+        return $statusRandom;
     }
 }

@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -51,6 +52,8 @@ class UserController extends Controller
         User::create($data);
         session()->flash('flash.banner', 'Usuario Creado Correctamente!');
         session()->flash('flash.bannerStyle', 'success');
+        // Alert::alert('Exito', 'Usuario Creado Correctamente!', 'success');
+        // Alert::toast('Usuario Creado Correctamente!', 'success');
         return to_route('user.index');
     }
 
@@ -62,6 +65,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        dd($user);
         return view('dashboard.users.show-user', compact('user'));
     }
 
@@ -90,8 +94,10 @@ class UserController extends Controller
             'email' => 'required|string|email',
         ]);
         $user->update($validated);
-        session()->flash('flash.banner', 'Usuario Editado Correctamente!');
-        session()->flash('flash.bannerStyle', 'success');
+        // session()->flash('flash.banner', 'Usuario Editado Correctamente!');
+        // session()->flash('flash.bannerStyle', 'success');
+        Alert::alert('Exito', 'Usuario Editado Correctamente!', 'success');
+        // Alert::toast('Usuario Editado Correctamente!', 'success');
         return to_route('user.index');
     }
 
@@ -104,8 +110,10 @@ class UserController extends Controller
     public function destroy(User $user)
     { 
         $user->delete();
-        session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
-        session()->flash('flash.bannerStyle', 'success');
+        // session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
+        // session()->flash('flash.bannerStyle', 'success');
+        // Alert::alert('Exito', 'Usuario Eliminado Correctamente!', 'success');
+        Alert::toast('Usuario Eliminado Correctamente!', 'success');
         return to_route("user.index");
     }
 

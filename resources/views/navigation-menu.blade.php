@@ -19,7 +19,7 @@
                     </button>
                 </div>              
                 <br class="hidden md:block">
-                <hr class="hidden md:block">
+                <hr class="hidden md:block md:opacity-100 md:border-t md:border-white">
                 <!-- Settings Dropdown -->
                 <div class="hidden md:block mt-3 w-full relative">
                     <x-jet-dropdown align="left" width="48">
@@ -123,7 +123,7 @@
                         </div>
                     @endif
                 </div>
-                <hr class="hidden md:block">
+                <hr class="hidden md:block md:opacity-100 md:border-t md:border-white">
                 <!-- Navigation Links -->
                 <div class="hidden w-full text-slate-50 md:flex md:flex-col md:items-center md:my-5">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">

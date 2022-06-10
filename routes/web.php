@@ -55,8 +55,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'prefix' => 'dashboa
 
     Route::group(['namespace' => 'App\Http\Controllers\dashboard'], function () {
         Route::resource('user', UserController::class);
-    });
-    Route::group(['namespace' => 'App\Http\Controllers\dashboard'], function () {
         Route::resource('slide', SlideMainController::class);
     });
 

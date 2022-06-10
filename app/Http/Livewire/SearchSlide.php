@@ -15,8 +15,7 @@ class SearchSlide extends Component
     {
         $search = '%'.$this->search.'%';
         return view('livewire.search-slide',[
-            'sliders' => SlideMain::where('name','LIKE', $search)->paginate(10)
+            'sliders' => SlideMain::where('name','LIKE', $search)->orWhere('content_desktop','LIKE', $search)->orWhere('content_mobile','LIKE', $search)->paginate(10)
         ]);
-        return view('livewire.search-slide');
     }
 }

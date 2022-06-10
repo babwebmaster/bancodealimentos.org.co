@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('slide_mains', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('content');
-            $table->boolean('status')->default(0);
+            $table->string('content_desktop');
+            $table->string('content_mobile');
+            $table->enum('status', ['yes', 'not'])->default('not');
             $table->timestamps();
         });
     }

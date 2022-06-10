@@ -19,8 +19,9 @@
                 <tr class="rounded-lg text-sm font-medium text-gray-700 text-left">
                     <th class="px-4 py-2 text-left bg-gray-200">ID</th>
                     <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Name')  }}</th>
-                    <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Content')  }}</th>
-                    <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Updated_at')  }}</th>
+                    <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Content_Desktop')  }}</th>
+                    <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Content_Mobile')  }}</th>
+                    <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Published')  }}</th>
                     <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Actions')  }}</th>
                 </tr>
             </thead>
@@ -35,7 +36,10 @@
                                 {{  $s->name  }}
                             </td>
                             <td class="px-4 py-4">
-                                {{  $s->content  }}
+                                {{  $s->content_desktop  }}
+                            </td>
+                            <td class="px-4 py-4">
+                                {{  $s->content_mobile  }}
                             </td>
                             <td class="px-4 py-4">
                                 {{  $s->updated_at->format('d M y')  }}
@@ -62,25 +66,28 @@
                 <tbody class="text-sm font-normal text-gray-700">
                     @foreach ($sliders as $s)
                         <tr class=" border-b border-gray-200 py-10">
-                            <td class="px-4 py-4">
+                            <td class="p-4">
                                 {{  $s->id  }}
                             </td>
                             <td class="px-4 py-4">
                                 {{  $s->name  }}
                             </td>
                             <td class="px-4 py-4">
-                                {{  $s->content  }}
+                                <img src="{{  $s->content_desktop  }}" class="w-28" alt="{{  $s->name  }}">
                             </td>
                             <td class="px-4 py-4">
-                                {{  $s->updated_at->format('d M y')  }}
+                                <img src="{{  $s->content_mobile  }}" class="w-14" alt="{{  $s->name  }}">
+                            </td>
+                            <td class="px-4 py-4">
+                                {{  $s->status == 'yes'?'si':'no'  }}
                             </td>
                             <td class="px-4 py-4 flex justify-around gap-2">
                                 <a href="{{  route('slide.show', $s)  }}" class="inline-flex items-center px-4 py-2 bg-sky-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-700 active:bg-sky-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Show')  }}"><i class="fa-solid fa-eye"></i></a>
-                                <a href="{{  route('slide.edit', $s)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="{{  route('slide.edit', $s)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <form action="{{  route('slide.destroy', $s)  }}" method="post">
                                     @method('DELETE')
                                     @csrf
-                                    <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('Delete')  }}"><i class="fa-solid fa-trash-can" onclick="confirm()"></i></button>
+                                    <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can" onclick="confirm()"></i></button>
                                 </form>
                             </td>
                         </tr>

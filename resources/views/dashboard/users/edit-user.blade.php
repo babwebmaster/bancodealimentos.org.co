@@ -9,7 +9,7 @@
             <div class="w-full rounded-lg bg-courves-profile">
             </div>
             <!-- Current Profile Photo -->
-            <div class="w-11/12 mx-auto p-3 rounded-lg bg-white-4/5 -translate-y-1/2 flex" x-show="! photoPreview">
+            <div class="w-11/12 mx-auto p-3 rounded-lg bg-white-4/5 -translate-y-1/2 flex">
                 <img src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}" class="rounded-md h-20 w-20 object-cover">
                 <div class="block">
                     <h3 class="ml-4 text-gray-900 text-2xl font-bold capitalize">{{ $user->name }}</h3>
@@ -29,7 +29,7 @@
                         <input type="text" name="name" id="name" placeholder="{{  __('messages.User Name')  }}" value="{{  old("name", $user->name)  }}"
                             class="w-full rounded-md border border-[#e0e0e0] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         @if ($errors->has('name'))
-                            <small id="helpId" class="text-red-600">
+                            <small id="errorName" class="text-red-600">
                                 @foreach ($errors->get('name') as $e)
                                     {{  $e  }}
                                 @endforeach
@@ -43,7 +43,7 @@
                         <input type="email" name="email" id="email" placeholder="example@domain.com" value="{{  old("email", $user->email)  }}"
                             class="w-full rounded-md border border-[#e0e0e0] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         @if ($errors->has('email'))
-                            <small id="helpId" class="text-red-600">
+                            <small id="errorEmail" class="text-red-600">
                                 @foreach ($errors->get('email') as $e)
                                     {{  $e  }}
                                 @endforeach

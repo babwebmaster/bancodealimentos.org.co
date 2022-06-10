@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class SlideMain extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'content_desktop',
+        'content_mobile',
+        'status'
+    ];
 }
