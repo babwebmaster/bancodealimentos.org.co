@@ -65,7 +65,6 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        dd($user);
         return view('dashboard.users.show-user', compact('user'));
     }
 
