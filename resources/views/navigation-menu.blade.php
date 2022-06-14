@@ -138,6 +138,9 @@
                     <x-jet-nav-link href="{{ route('slide.index') }}" :active="request()->routeIs('slide.index') || request()->routeIs('slide.show') || request()->routeIs('slide.create') || request()->routeIs('slide.edit')">
                         {{ __('messages.Carousel') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('slide-donors.index') }}" :active="request()->routeIs('slide-donors.index') || request()->routeIs('slide-donors.show') || request()->routeIs('slide-donors.create') || request()->routeIs('slide-donors.edit')">
+                        {{ __('messages.Our donors') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
             
@@ -229,6 +232,9 @@
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('slide.index') }}" :active="request()->routeIs('slide.index') || request()->routeIs('slide.show') || request()->routeIs('slide.create') || request()->routeIs('slide.edit')">
                     {{ __('messages.Carousel') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('slide-donors.index') }}" :active="request()->routeIs('slide-donors.index') || request()->routeIs('slide-donors.show') || request()->routeIs('slide-donors.create') || request()->routeIs('slide-donors.edit')">
+                    {{ __('messages.Our donors') }}
                 </x-jet-responsive-nav-link>
             </div>
         </div>

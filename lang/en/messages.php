@@ -98,9 +98,8 @@ return [
     'Dashboard' => 'Dashboard',
     'User Profile' => 'User Profile',
     'User Management' => 'User Management',
-    //delete user
     'Are you sure you want to delete this user?' => 'Are you sure you want to delete this user?',
-    'If you delete this, it will be gone forever.' => 'If you delete this, it will be gone forever.',
+    'If you delete this, it will be gone forever.' => 'If you delete this, it will be gone forever',
     //create User
     'User Name' => 'User Name',
     //edit User
@@ -111,8 +110,6 @@ return [
     'Create User' => 'Create User',
     'Search' => 'Search',
     'Photo Profile' => 'Photo Profile',
-    'Name' => 'Name',
-    'Email' => 'Email',
     'Actions' => 'Actions',
     'Carousel' => 'Carousel',
     // sliders
@@ -126,8 +123,8 @@ return [
     'Show' => 'Show',
     'Edit' => 'Edit',
     'Delete' => 'Delete',
-    'Edit slide' => 'Edit slide',
-    'Name slide' => 'Name slide',
+    'Edit slide' => 'Slide Edit',
+    'Name slide' => 'Slide name',
     'Image slide desktop' => 'Image slide desktop',
     'Image slide mobile' => 'Image slide mobile',
     'Published' => 'Published',
@@ -135,4 +132,18 @@ return [
     'Slide name' => 'Slide name',
     'Create slide' => 'Create slide',
     'Select Option' => 'Select Option',
+    'Desktop' => 'Desktop',
+    'Characterist'=>'Characterist',
+    'Url image'=>'Url image',
+    'Slide published'=>'Slide Published',
+    'Dimensions'=>'Dimensions',
+    'Our donors'=>'Our donors',
+    'Image'=>'Image',
+    'Image published'=>'Image Published',
+    //edit Donor
+    'Edit donor'=>'Edit donor',
+    'Donor name'=>'Donor name',
+    'Image slide donor'=>'Image slide donor',
+    ''=>'',
+    ''=>'',
 ];
