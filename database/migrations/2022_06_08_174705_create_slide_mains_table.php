@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('content_desktop');
             $table->string('content_mobile');
+            $table->string('caption_status');
+            $table->string('content_caption');
+            $table->enum('btn_status', ['yes', 'not'])->default('not');
+            $table->string('btn_text');
+            $table->string('btn_url');
             $table->enum('status', ['yes', 'not'])->default('not');
             $table->timestamps();
         });

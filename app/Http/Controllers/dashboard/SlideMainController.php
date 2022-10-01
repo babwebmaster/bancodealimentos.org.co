@@ -16,7 +16,7 @@ class SlideMainController extends Controller
      */
     public function index()
     {
-        $sliders = SlideMain::paginate(10);
+        $sliders = SlideMain::where('status','=','yes')->paginate(10);
         return view('dashboard.sliders.index-slide', compact('sliders'));
     }
 
@@ -43,6 +43,11 @@ class SlideMainController extends Controller
             'name' => 'required|min:3|max:50|string',
             'content_desktop' => 'required|mimes:jpg,jpeg,png|max:2048|dimensions:width=1920,height=700',
             'content_mobile' => 'required|mimes:jpg,jpeg,png|max:2048|dimensions:width=778,height=778',
+            'caption_status' => 'required|string',
+            'content_caption' => 'exclude_if:caption_status,false|required|string|min:3|max:200',
+            'btn_status' => 'required|string',
+            'btn_text' => 'exclude_if:btn_status,false|required|string|min:3|max:30',
+            'btn_url' => 'exclude_if:btn_status,false|required|url',
             'status' => 'required|string',
         ]);
         $fileName_desktop = env('APP_URL')."images"."/".'d-'.time().'.'.$validated["content_desktop"]->extension();
@@ -95,9 +100,14 @@ class SlideMainController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|min:3|max:50|string',
-            'status' => 'required',
             'content_desktop' => 'mimes:jpg,jpeg,png|max:2048|dimensions:width=1920,height=700',
             'content_mobile' => 'mimes:jpg,jpeg,png|max:2048|dimensions:width=778,height=778',
+            'caption_status' => 'required|string',
+            'content_caption' => 'exclude_if:caption_status,false|required|string|min:3|max:200',
+            'btn_status' => 'required|string',
+            'btn_text' => 'exclude_if:btn_status,false|required|string|min:3|max:30',
+            'btn_url' => 'exclude_if:btn_status,false|required|url',
+            'status' => 'required',
         ]);
         if (isset($validated["content_desktop"]) && isset($validated["content_mobile"])) {
             // dd($request->image);

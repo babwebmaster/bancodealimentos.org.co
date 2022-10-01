@@ -12,6 +12,11 @@ class SlideMain extends Model
         'name',
         'content_desktop',
         'content_mobile',
+        'caption_status',
+        'content_caption',
+        'btn_status',
+        'btn_text',
+        'btn_url',
         'status'
     ];
 }

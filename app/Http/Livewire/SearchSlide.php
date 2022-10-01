@@ -10,6 +10,7 @@ class SearchSlide extends Component
 {
     use WithPagination;
     public $search;
+    protected $queryString = ['search'];
     
     public function render()
     {

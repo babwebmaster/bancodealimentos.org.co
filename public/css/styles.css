@@ -50,6 +50,9 @@
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.text-shadow{
+    text-shadow: 1px 1px 3px #333;
+}
 .bg-burbbles{
     background: url(/images/bubbles.png);
     background-size: cover;

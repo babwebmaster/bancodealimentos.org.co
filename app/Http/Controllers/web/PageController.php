@@ -4,12 +4,14 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
     public function index()
     {
-        return view('web.index');
+        $sliders = DB::table('slide_mains')->where('status', '=', 'yes')->get();
+        return view('web.index', compact('sliders'));
     }
 
     public function ourValues()
