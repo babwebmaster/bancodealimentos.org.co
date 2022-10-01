@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('content_desktop');
             $table->string('content_mobile');
             $table->string('caption_status');
-            $table->string('content_caption');
+            $table->string('content_caption')->default('lOREM IPSUM');
             $table->enum('btn_status', ['yes', 'not'])->default('not');
-            $table->string('btn_text');
-            $table->string('btn_url');
+            $table->string('btn_text')->default('lOREM IPSUM');
+            $table->string('btn_url')->default('LOREM IPSUM');
             $table->enum('status', ['yes', 'not'])->default('not');
             $table->timestamps();
         });

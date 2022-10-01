@@ -44,10 +44,10 @@ class SlideMainController extends Controller
             'content_desktop' => 'required|mimes:jpg,jpeg,png|max:2048|dimensions:width=1920,height=700',
             'content_mobile' => 'required|mimes:jpg,jpeg,png|max:2048|dimensions:width=778,height=778',
             'caption_status' => 'required|string',
-            'content_caption' => 'exclude_if:caption_status,false|required|string|min:3|max:200',
+            'content_caption' => 'exclude_if:caption_status,not|required|string|min:3|max:200',
             'btn_status' => 'required|string',
-            'btn_text' => 'exclude_if:btn_status,false|required|string|min:3|max:30',
-            'btn_url' => 'exclude_if:btn_status,false|required|url',
+            'btn_text' => 'exclude_if:btn_status,not|required|string|min:3|max:30',
+            'btn_url' => 'exclude_if:btn_status,not|required|url',
             'status' => 'required|string',
         ]);
         $fileName_desktop = env('APP_URL')."images"."/".'d-'.time().'.'.$validated["content_desktop"]->extension();
@@ -103,12 +103,13 @@ class SlideMainController extends Controller
             'content_desktop' => 'mimes:jpg,jpeg,png|max:2048|dimensions:width=1920,height=700',
             'content_mobile' => 'mimes:jpg,jpeg,png|max:2048|dimensions:width=778,height=778',
             'caption_status' => 'required|string',
-            'content_caption' => 'exclude_if:caption_status,false|required|string|min:3|max:200',
+            'content_caption' => 'exclude_if:caption_status,not|required|string|min:3|max:200',
             'btn_status' => 'required|string',
-            'btn_text' => 'exclude_if:btn_status,false|required|string|min:3|max:30',
-            'btn_url' => 'exclude_if:btn_status,false|required|url',
+            'btn_text' => 'exclude_if:btn_status,not|required|string|min:3|max:30',
+            'btn_url' => 'exclude_if:btn_status,not|required|url',
             'status' => 'required',
         ]);
+         // dd($request->content_desktop);
         if (isset($validated["content_desktop"]) && isset($validated["content_mobile"])) {
             // dd($request->image);
             // dd($request->validated()["image"]->hashName());

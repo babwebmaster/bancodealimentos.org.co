@@ -23,7 +23,7 @@
                             </div>
                         @endif
                         @if ($slider->btn_status == 'yes')
-                            <a class="absolute left-1/2 -translate-x-2/4 bottom-10 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded shadow-lg text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
+                            <a class="absolute left-1/2 -translate-x-2/4 bottom-10 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded card-logo no-underline text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
                         @endif
                     </div>
                 @else
@@ -36,7 +36,7 @@
                             </div>
                         @endif
                         @if ($slider->btn_status == 'yes')
-                            <a class="absolute left-1/2 -translate-x-2/4 bottom-10 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded shadow-lg text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
+                            <a class="absolute left-1/2 -translate-x-2/4 bottom-10 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded card-logo no-underline text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
                         @endif
                     </div>
                 @endif

@@ -15,7 +15,7 @@
                         {{  __('messages.Name slide')  }}
                     </label>
                     <input type="text" name="name" id="name" placeholder="{{  __('messages.User Name')  }}" value="{{  $slide->name  }}"
-                        class="w-full rounded-md border border-[#000] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                        class="w-full rounded-md border border-[#e000] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
                     @if ($errors->has('name'))
                         <small id="errorName" class="text-red-600">
                             @foreach ($errors->get('name') as $e)
@@ -32,7 +32,7 @@
                         </label>
                         <img src="{{  $slide->content_desktop  }}" class="h-20 aspect-video" id="previewDesktop" alt="{{  $slide->name  }}">
                         <br>
-                        <input type="file" name="content_desktop" id="image_desktop" onchange="previsualizeImg('desktop')" accept="image/png, .jpeg, .jpg" class="w-full block">
+                        <input type="file" name="content_desktop" id="image_desktop" onchange="previsualizeImg('desktop')" accept="image/png, image/jpeg, image/jpg" class="w-full block">
                         <small id="errorDesktop" class="text-red-600">
                             @if ($errors->has('content_desktop'))
                                 @foreach ($errors->get('content_desktop') as $e)
@@ -48,7 +48,7 @@
                         </label>
                         <img src="{{  $slide->content_mobile  }}" class="h-20 aspect-square" id="previewMobile" alt="{{  $slide->name  }}">
                         <br>
-                        <input type="file" name="content_mobile" id="image_mobile" onchange="previsualizeImg('mobile')" accept="image/png, .jpeg, .jpg" class="w-full block">
+                        <input type="file" name="content_mobile" id="image_mobile" onchange="previsualizeImg('mobile')" accept="image/png, image/jpeg, image/jpg" class="w-full block">
                         <small id="errorMobile" class="text-red-600">
                             @if ($errors->has('content_mobile'))
                                 @foreach ($errors->get('content_mobile') as $e)
@@ -82,7 +82,7 @@
                             {{  __('messages.Caption text')  }}
                         </label>
                         <input type="text" name="content_caption" id="content_caption" placeholder="{{  __('messages.Caption placeholder')  }}" value="{{  $slide->content_caption  }}"
-                            class="w-full rounded-md border border-[#000] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                            class="w-full rounded-md border border-[#e000] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         @if ($errors->has('content_caption'))
                             <small id="errorContent_caption" class="text-red-600">
                                 @foreach ($errors->get('content_caption') as $e)
@@ -116,7 +116,7 @@
                             {{  __('messages.Btn_text')  }}
                         </label>
                         <input type="text" name="btn_text" id="btn_text" placeholder="{{  __('messages.Btn_text')  }}" value="{{  $slide->btn_text  }}"
-                            class="w-full rounded-md border border-[#000] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                            class="w-full rounded-md border border-[#e000] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         @if ($errors->has('btn_text'))
                             <small id="errorBtn_text" class="text-red-600">
                                 @foreach ($errors->get('btn_text') as $e)
@@ -130,7 +130,7 @@
                             {{  __('messages.Btn_url')  }}
                         </label>
                         <input type="text" name="btn_url" id="btn_url" placeholder="{{  __('messages.Btn_url')  }}" value="{{  $slide->btn_url  }}"
-                            class="w-full rounded-md border border-[#000] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                            class="w-full rounded-md border border-[#e000] bg-transparent py-3 px-6 text-base font-medium text-gry-900 outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         @if ($errors->has('btn_url'))
                             <small id="errorBtn_url" class="text-red-600">
                                 @foreach ($errors->get('btn_url') as $e)
