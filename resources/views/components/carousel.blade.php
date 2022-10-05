@@ -1,5 +1,5 @@
-<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-    <ol class="carousel-indicators">
+<div id="mainCarousel" class="carousel slide carousel-fade relative" data-bs-ride="carousel">
+    <ol class="carousel-indicators hidden">
         @foreach ($sliders as $slider)
             @if ($slider->status == 'yes')
                 @if ($loop->first)
@@ -18,12 +18,12 @@
                         <img src="{{  $slider->content_desktop  }}" alt="{{  $slider->name  }}" class="hidden md:block">
                         <img src="{{  $slider->content_mobile  }}" alt="{{  $slider->name  }}" class="block md:hidden">
                         @if ($slider->caption_status == 'yes')
-                            <div class="carousel-caption d-none d-md-block bottom-16">
+                            <div class="carousel-caption d-none d-md-block bottom-20">
                                 <h3 class="font-bold text-xl text-shadow text-center">{{  $slider->content_caption  }}</h3>
                             </div>
                         @endif
                         @if ($slider->btn_status == 'yes')
-                            <a class="absolute left-1/2 -translate-x-2/4 bottom-10 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded card-logo no-underline text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
+                            <a class="absolute left-1/2 -translate-x-2/4 bottom-12 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded card-logo no-underline text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
                         @endif
                     </div>
                 @else
@@ -31,12 +31,12 @@
                         <img src="{{  $slider->content_desktop  }}" alt="{{  $slider->name  }}" class="hidden md:block">
                         <img src="{{  $slider->content_mobile  }}" alt="{{  $slider->name  }}" class="block md:hidden">
                         @if ($slider->caption_status == 'yes')
-                            <div class="carousel-caption d-none d-md-block bottom-16">
+                            <div class="carousel-caption d-none d-md-block bottom-20">
                                 <h3 class="font-bold text-xl text-shadow text-center">{{  $slider->content_caption  }}</h3>
                             </div>
                         @endif
                         @if ($slider->btn_status == 'yes')
-                            <a class="absolute left-1/2 -translate-x-2/4 bottom-10 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded card-logo no-underline text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
+                            <a class="absolute left-1/2 -translate-x-2/4 bottom-12 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded card-logo no-underline text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
                         @endif
                     </div>
                 @endif
@@ -52,5 +52,8 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+    @endif
+    @if (Route::is('web.index'))
+        <x-web.carousel-svg />
     @endif
 </div>

@@ -27,11 +27,17 @@
 .top-nav a:hover{
     text-decoration: none;
 }
+.text-red-bab{
+    color: #da2128;
+}
 .bg-white-transparent{
     background-color: #ffffff36;
 }
 .bg-bab{
     background-color: #011b47;
+}
+.bg-bab-sky{
+    background-color:#4f80d6;
 }
 .hover\:bg-bab:hover{
     background-color: #011b47;
@@ -67,7 +73,7 @@
     width: 100%;
     z-index: 100;
     opacity: 80;
-    transition: .5s;
+    transition: .3s;
 }
 .menu-home .navbar-brand{
     max-width: 200px;
@@ -187,4 +193,11 @@ tbody tr td:last-child { border-top-right-radius: 5px; border-bottom-right-radiu
         border-left: 2px solid #da2128;
         border-bottom: none;
     }
+}
+.bg-gradient{
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 1) 85%), 
+    radial-gradient(ellipse at top left, rgba(13, 110, 253, 0.5), transparent 50%),
+    radial-gradient(ellipse at top right, rgba(255, 228, 132, 0.5), transparent 50%),
+    radial-gradient(ellipse at center right, rgba(112.520718, 44.062154, 249.437846, 0.5), transparent 50%),
+    radial-gradient(ellipse at center left, rgba(214,51,132, 0.5), transparent 50%);
 }

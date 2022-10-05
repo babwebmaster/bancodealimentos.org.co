@@ -11,7 +11,8 @@ class PageController extends Controller
     public function index()
     {
         $sliders = DB::table('slide_mains')->where('status', '=', 'yes')->get();
-        return view('web.index', compact('sliders'));
+        $slideDonor = DB::table('slide_donors')->where('status', '=', 'yes')->get();
+        return view('web.index', compact(['sliders', 'slideDonor']));
     }
 
     public function ourValues()
