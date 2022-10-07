@@ -156,4 +156,5 @@ return [
     'Caption placeholder' => 'text Caption',
     'Button' => 'Button',
     'Publish slide' => 'Publish Slide',
+    'Cifras' => 'Figures',
 ];

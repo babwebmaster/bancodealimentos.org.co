@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\web\Cifras;
 use App\Models\web\SlideMain;
 use App\Models\web\SlideDonors;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -20,5 +21,6 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
         SlideMain::factory(3)->create();
         SlideDonors::factory(30)->create();
+        Cifras::factory(9)->create();
     }
 }

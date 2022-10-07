@@ -141,6 +141,9 @@
                     <x-jet-nav-link href="{{ route('slide-donors.index') }}" :active="request()->routeIs('slide-donors.index') || request()->routeIs('slide-donors.show') || request()->routeIs('slide-donors.create') || request()->routeIs('slide-donors.edit')">
                         {{ __('messages.Our donors') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('cifras.index') }}" :active="request()->routeIs('cifras.index') || request()->routeIs('cifras.show') || request()->routeIs('cifras.create') || request()->routeIs('cifras.edit')">
+                        {{ __('messages.Cifras') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
             
@@ -235,6 +238,12 @@
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('slide-donors.index') }}" :active="request()->routeIs('slide-donors.index') || request()->routeIs('slide-donors.show') || request()->routeIs('slide-donors.create') || request()->routeIs('slide-donors.edit')">
                     {{ __('messages.Our donors') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('slide-donors.index') }}" :active="request()->routeIs('slide-donors.index') || request()->routeIs('slide-donors.show') || request()->routeIs('slide-donors.create') || request()->routeIs('slide-donors.edit')">
+                    {{ __('messages.Our donors') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('cifras.index') }}" :active="request()->routeIs('cifras.index') || request()->routeIs('cifras.show') || request()->routeIs('cifras.create') || request()->routeIs('cifras.edit')">
+                    {{ __('messages.Cifras') }}
                 </x-jet-responsive-nav-link>
             </div>
         </div>

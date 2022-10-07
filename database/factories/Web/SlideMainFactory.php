@@ -20,21 +20,12 @@ class SlideMainFactory extends Factory
             'name'=>$this->faker->word,
             'content_desktop'=>$this->faker->imageUrl(1920,700),
             'content_mobile'=>$this->faker->imageUrl(778,778),
-            'caption_status'=>$this->generateRandomStatus(),
+            'caption_status'=>$this->faker->randomElement(['yes', 'not']),
             'content_caption'=>$this->faker->text(25),
-            'btn_status'=>$this->generateRandomStatus(),
+            'btn_status'=>$this->faker->randomElement(['yes', 'not']),
             'btn_text'=>$this->faker->word,
-            'btn_url'=>$this->generateUrlFactory(),
-            'status'=>$this->generateRandomStatus()
+            'btn_url'=>$this->faker->url(),
+            'status'=>$this->faker->randomElement(['yes', 'not'])
         ];
-    }
-    public function generateRandomStatus(){
-        $numberRandom = rand(0,1);
-        $statusRandom = $numberRandom == 1?'yes':'not';
-        return $statusRandom;
-    }
-    public function generateUrlFactory(){
-        $fakerUrl = 'https://via.placeholder.com/250/fff';
-        return $fakerUrl;
     }
 }

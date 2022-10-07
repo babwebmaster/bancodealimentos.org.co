@@ -2,21 +2,22 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\User;
+use App\Models\web\Cifras;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class SearchUser extends Component
+class SearchCifras extends Component
 {
     use WithPagination;
     public $search;
     protected $queryString = ['search'];
-    
+
     public function render()
     {
         $search = '%'.$this->search.'%';
-        return view('livewire.search-user',[
-            'users' => User::where('name','LIKE', $search)->orWhere('email','LIKE', $search)->paginate(10)
+        $querySearch = Cifras::where('name','LIKE', $search)->orWhere('value','LIKE', $search);
+        return view('livewire.search-cifras',[
+            'cifras' => $querySearch->paginate(5)
         ]);
     }
 }

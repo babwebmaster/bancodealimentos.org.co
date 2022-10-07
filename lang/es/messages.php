@@ -156,7 +156,7 @@ return [
     'Caption placeholder' => 'Texto del caption',
     'Button' => 'Botón',
     'Publish slide' => 'Publicar Slide',
-    '' => '',
+    'Cifras' => 'Cifras',
     '' => '',
     '' => '',
     '' => '',

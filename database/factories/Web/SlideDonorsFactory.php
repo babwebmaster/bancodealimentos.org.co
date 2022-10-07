@@ -19,12 +19,7 @@ class SlideDonorsFactory extends Factory
         return [
             'name'=>$this->faker->word,
             'image'=>$this->faker->imageUrl(600,600),
-            'status'=>$this->generateRandomStatus() 
+            'status'=>$this->faker->randomElement(['yes', 'not'])
         ];
-    }
-    public function generateRandomStatus(){
-        $numberRandom = rand(0,1);
-        $statusRandom = $numberRandom == 1?'yes':'not';
-        return $statusRandom;
     }
 }

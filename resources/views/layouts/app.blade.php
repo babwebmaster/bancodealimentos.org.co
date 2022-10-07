@@ -96,20 +96,17 @@
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
         @endif
-        @if (Route::is('slide.edit'))  
-            <script src="{{ asset('js/dashboard.slide.edit.js') }}"></script>
+        @if (Route::is('slide.create') || Route::is('slide.edit'))  
+            <script src="{{ asset('js/dashboard.slide.js') }}"></script>
         @endif
-        @if (Route::is('slide.create'))
-            <script src="{{ asset('js/dashboard.slide.create.js') }}"></script>
+        @if (Route::is('slide-donors.create') || Route::is('slide-donors.edit'))
+            <script src="{{ asset('js/dashboard.slideDonors.js') }}"></script>
         @endif
         @if (Route::is('slide-donors.index'))
             <script src="{{ asset('js/dashboard.slideDonors.index.js') }}"></script>
         @endif
-        @if (Route::is('slide-donors.edit'))
-            <script src="{{ asset('js/dashboard.slideDonors.edit.js') }}"></script>
-        @endif
-        @if (Route::is('slide-donors.create'))
-            <script src="{{ asset('js/dashboard.slideDonors.create.js') }}"></script>
+        @if (Route::is('cifras.index'))
+            <script src="{{ asset('js/dashboard.cifras.js') }}"></script>
         @endif
     </body>
 </html>
