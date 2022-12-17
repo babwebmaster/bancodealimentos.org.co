@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\web\CategoryCifras;
 use App\Models\web\Cifras;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CifrasController extends Controller
 {
@@ -15,8 +17,9 @@ class CifrasController extends Controller
      */
     public function index()
     {
-        $cifras = Cifras::paginate(10);
-        return view('dashboard.cifras.index-cifras', compact('cifras'));
+        $cifras = Cifras::orderBy('id', 'DESC')->paginate(3);
+        $category_cifras = CategoryCifras::all();
+        return view('dashboard.cifras.index-cifras', compact('cifras','category_cifras'));
     }
 
     /**
@@ -26,7 +29,9 @@ class CifrasController extends Controller
      */
     public function create()
     {
-        return view('dashboard.cifras.create-cifras');
+        $cifra = new Cifras();
+        $category_cifras = CategoryCifras::all();
+        return view('dashboard.cifras.create-cifras', compact('cifra','category_cifras'));
     }
 
     /**
@@ -37,7 +42,23 @@ class CifrasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|min:3|max:50|string',
+            'value' => 'required|numeric',
+            'published' => 'required',
+            'category' => 'required',
+            'icon' => 'mimes:jpg,jpeg,png|max:2048|dimensions:width=300,height=300',
+        ]);
+        $fileName = env('APP_URL')."images"."/".'d-'.time().'.'.$validated["icon"]->extension();
+        $validated["icon"]=$fileName;
+        $request->icon->move(public_path("images"), $fileName);
+        $validated["category"]=implode(",",$validated["category"]);
+        Cifras::create($validated);
+        session()->flash('flash.banner', 'Cifra Creado Correctamente!');
+        session()->flash('flash.bannerStyle', 'success');
+        // Alert::alert('Exito', 'Usuario Creado Correctamente!', 'success');
+        // Alert::toast('Usuario Creado Correctamente!', 'success');
+        return to_route('cifras.index');
     }
 
     /**
@@ -46,9 +67,9 @@ class CifrasController extends Controller
      * @param  \App\Models\web\Cifras  $cifras
      * @return \Illuminate\Http\Response
      */
-    public function show(Cifras $cifras)
+    public function show(Cifras $cifra)
     {
-        return view('dashboard.cifras.show-cifras');
+        return view('dashboard.cifras.show-cifras', compact('cifra'));
     }
 
     /**
@@ -57,9 +78,10 @@ class CifrasController extends Controller
      * @param  \App\Models\web\Cifras  $cifras
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cifras $cifras)
+    public function edit(Cifras $cifra)
     {
-        return view('dashboard.cifras.edit-cifras');
+        $category_cifras = CategoryCifras::all();
+        return view('dashboard.cifras.edit-cifras', compact('cifra','category_cifras'));
     }
 
     /**
@@ -69,9 +91,31 @@ class CifrasController extends Controller
      * @param  \App\Models\web\Cifras  $cifras
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cifras $cifras)
+    public function update(Request $request, Cifras $cifra)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|min:3|max:50|string',
+            'value' => 'required|numeric',
+            'published' => 'required',
+            'category' => 'required',
+            'icon' => 'mimes:jpg,jpeg,png|max:2048|dimensions:width=300,height=300',
+        ]);
+        if (isset($validated["icon"])) {
+            // dd($request->image);
+            // dd($request->validated()["image"]->hashName());
+            // dd($request->validated()["image"]->extension());
+            
+            $fileName = env('APP_URL')."images"."/".'d-'.time().'.'.$validated["icon"]->extension();
+            $validated["icon"]=$fileName;
+            $request->icon->move(public_path("images"), $fileName);
+        }
+        $validated["category"]=implode(",",$validated["category"]);
+        $cifra->create($validated);
+        // session()->flash('flash.banner', 'Usuario Editado Correctamente!');
+        // session()->flash('flash.bannerStyle', 'success');
+        // Alert::alert('Exito', 'Usuario Editado Correctamente!', 'success');
+        Alert::toast('Cifra Creada Correctamente!', 'success');
+        return to_route('cifras.index');
     }
 
     /**
@@ -80,8 +124,13 @@ class CifrasController extends Controller
      * @param  \App\Models\web\Cifras  $cifras
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cifras $cifras)
+    public function destroy(Cifras $cifra)
     {
-        //
+        $cifra->delete();
+        // session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
+        // session()->flash('flash.bannerStyle', 'success');
+        Alert::alert('Exito', 'Cifra Eliminada Correctamente!', 'success');
+        // Alert::toast('Slider Eliminado Correctamente!', 'success');
+        return to_route("cifras.index");
     }
 }

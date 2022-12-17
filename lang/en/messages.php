@@ -157,4 +157,11 @@ return [
     'Button' => 'Button',
     'Publish slide' => 'Publish Slide',
     'Cifras' => 'Figures',
+    'All figures' => 'All figures',
+    'Create New Figure' => 'Create New Figure',
+    'Value' => 'Value',
+    'Icon' => 'Icon',
+    'Category' => 'Category',
+    'Categories' => 'Categories',
+    '' => '',
 ];

@@ -5,14 +5,10 @@ namespace App\Models\web;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cifras extends Model
+class CategoryCifras extends Model
 {
     use HasFactory;
     protected $fillable = [
         'name',
-        'value',
-        'icon',
-        'published',
-        'category'
     ];
 }

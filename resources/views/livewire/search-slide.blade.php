@@ -63,7 +63,7 @@
                             <form action="{{  route('slide.destroy', $s)  }}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can" onclick="confirm()"></i></button>
+                                <button type="submit" class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can"></i></button>
                             </form>
                         </td>
                     </tr>

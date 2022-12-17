@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cifras', function (Blueprint $table) {
+        Schema::create('category_cifras', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('value');
-            $table->string('icon');
-            $table->enum('published', ['yes', 'not'])->default('not');
-            $table->string('category')->default('inicio');
+            $table->string('nombre');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cifras');
+        Schema::dropIfExists('category_cifras');
     }
 };

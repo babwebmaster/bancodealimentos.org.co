@@ -24,69 +24,39 @@
                     <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Actions')  }}</th>
                 </tr>
             </thead>
-            @if (!empty($search))
-                <tbody class="text-sm font-normal text-gray-700">
-                    @forelse ($slideDonor as $s)
-                        <tr class=" border-b border-gray-200 py-10">
-                            <td class="px-4 py-4">
-                                {{  $s->id  }}
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $s->name  }}
-                            </td>
-                            <td class="px-4 py-4">
-                                <img src="{{  $s->image  }}" class="w-28" alt="{{  $s->name  }}">
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $s->updated_at->format('d M y')  }}
-                            </td>
-                            <td class="px-4 py-4 flex justify-around gap-2">
-                                <a href="{{  route('slide-donors.show', $s)  }}" class="inline-flex items-center px-4 py-2 bg-sky-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-700 active:bg-sky-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Show')  }}"><i class="fa-solid fa-eye"></i></a>
-                                <a href="{{  route('slide-donors.edit', $s)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <form action="{{  route('slide-donors.destroy', $s)  }}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can" onclick="confirm()"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr class=" border-b border-gray-200 py-10">
-                            <td class="px-4 py-4">
-                                No hay registros
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            @else
-                <tbody class="text-sm font-normal text-gray-700">
-                    @foreach ($slideDonor as $s)
-                        <tr class=" border-b border-gray-200 py-10">
-                            <td class="p-4">
-                                {{  $s->id  }}
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $s->name  }}
-                            </td>
-                            <td class="px-4 py-4">
-                                <img src="{{  $s->image  }}" class="w-28" alt="{{  $s->name  }}">
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $s->status == 'yes'?'si':'no'  }}
-                            </td>
-                            <td class="px-4 py-4 flex justify-around gap-2">
-                                <a href="{{  route('slide-donors.show', $s)  }}" class="inline-flex items-center px-4 py-2 bg-sky-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-700 active:bg-sky-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Show')  }}"><i class="fa-solid fa-eye"></i></a>
-                                <a href="{{  route('slide-donors.edit', $s)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <form action="{{  route('slide-donors.destroy', $s)  }}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can" onclick="confirm()"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            @endif
+            <tbody class="text-sm font-normal text-gray-700">
+                @forelse ($slideDonor as $s)
+                    <tr class=" border-b border-gray-200 py-10">
+                        <td class="px-4 py-4">
+                            {{  $s->id  }}
+                        </td>
+                        <td class="px-4 py-4">
+                            {{  $s->name  }}
+                        </td>
+                        <td class="px-4 py-4">
+                            <img src="{{  $s->image  }}" class="w-28" alt="{{  $s->name  }}">
+                        </td>
+                        <td class="px-4 py-4">
+                            {{  $s->status == 'yes'?'si':'no'  }}
+                        </td>
+                        <td class="px-4 py-4 flex justify-around gap-2">
+                            <a href="{{  route('slide-donors.show', $s)  }}" class="inline-flex items-center px-4 py-2 bg-sky-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-700 active:bg-sky-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Show')  }}"><i class="fa-solid fa-eye"></i></a>
+                            <a href="{{  route('slide-donors.edit', $s)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <form action="{{  route('slide-donors.destroy', $s)  }}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @empty
+                    <tr class=" border-b border-gray-200 py-10">
+                        <td class="px-4 py-4">
+                            No hay registros
+                        </td>
+                    </tr>
+                @endforelse
+            </tbody>
         </table>
         <div id="pagination" class="w-full flex justify-center border-t border-gray-100 pt-4 items-center">
             {{  $slideDonor->links()  }}

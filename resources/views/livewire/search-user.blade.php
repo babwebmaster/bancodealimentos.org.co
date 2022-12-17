@@ -25,7 +25,7 @@
                     <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Actions')  }}</th>
                 </tr>
             </thead>
-            @if (!empty($search))
+            {{-- @if (!empty($search)) --}}
                 <tbody class="text-sm font-normal text-gray-700">
                     @forelse ($users as $u)
                         <tr class=" border-b border-gray-200 py-10">
@@ -50,7 +50,7 @@
                                 <form action="{{  route('user.destroy', $u)  }}" method="post">
                                     @method('DELETE')
                                     @csrf
-                                    <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can" onclick="confirm()"></i></button>
+                                    <button type="submit" class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -65,7 +65,7 @@
                 {{-- <div id="pagination" class="w-full flex justify-center border-t border-gray-100 pt-4 items-center">
                     {{  $users->links()  }}
                 </div> --}}
-            @else
+            {{-- @else
                 <tbody class="text-sm font-normal text-gray-700">
                     @foreach ($users as $u)
                         <tr class=" border-b border-gray-200 py-10">
@@ -90,13 +90,13 @@
                                 <form action="{{  route('user.destroy', $u)  }}" method="post">
                                     @method('DELETE')
                                     @csrf
-                                    <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can" onclick="confirm()"></i></button>
+                                    <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
-            @endif
+            @endif --}}
         </table>
         <div id="pagination" class="w-full flex justify-center border-t border-gray-100 pt-4 items-center">
             {{  $users->links()  }}

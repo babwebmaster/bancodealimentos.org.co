@@ -52,11 +52,5 @@
         </div>
     </div>
 </section>
-<section data-sectionId="cifras" class="bg-bab-sky py-16">
 
-</section>
-<section data-sectionId="nuestros_donantes_carousel" class="bg-white mb-8">
-    <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl m-auto">
-        <x-carousel-donors :slideDonor="$slideDonor" />
-    </div>
-</section>
+

@@ -1,22 +1,32 @@
-const counterAnimation = (elem,start = 0, end, duration) => {
-    const target = document.querySelector(elem)
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if(!startTimestamp) startTimestamp = timestamp
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1)
-        target.innerText = Math.floor(progress * (end - start) + start)
-        if(progress < 1){
-            window.requestAnimationFrame(step)
-        }
+const previsualizeImg = () => {
+    const image = document.getElementById('icon');
+    const imagen = image.files;
+    if (imagen.length == 1) { 
+        loadImage(imagen[0]);
     }
-    window.requestAnimationFrame(step)
 }
-document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('[data-name="counter"]')
-    for (let index = 0; index < elements.length; index++) {
-        const eid = elements[index].getAttribute('id')
-        const evalue = elements[index].getAttribute('data-value')
-        counterAnimation(`#${eid}`, 0, evalue, 3000);
-    }
-
-});
+const loadImage = (imagen) => {
+    const preview = document.getElementById('preview');
+    const image = document.getElementById('icon');
+    const error = document.getElementById('error');
+    const img = new Image();
+    // Lo convertimos a un objeto de tipo objectURL
+    const source = URL.createObjectURL(imagen);
+    img.src = source;
+    img.onload = () => {
+        const ancho = img.width;
+        const alto = img.height
+        if(ancho == 300 && alto == 300){
+            imagePreview(preview, source, error)
+        }else{
+            image.value = "";
+            error.innerHTML = "*** Las dimensiones de la imagen deben ser ancho: 600px, Alto: 600px";
+        }
+    }  
+}
+const imagePreview = (preview, source , error) => {
+    preview.src = source;
+    preview.classList.remove('hidden');
+    preview.classList.add('block');
+    error.innerHTML="";
+}
