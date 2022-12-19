@@ -15,8 +15,7 @@ class SearchSlideDonors extends Component
     public function render()
     {
         $search = '%'.$this->search.'%';
-        return view('livewire.search-slide-donors',[
-            'slideDonor' => SlideDonors::where('name','LIKE', $search)->orWhere('image','LIKE', $search)->paginate(10)
-        ]);
+        $sliderDonor = SlideDonors::where('name','LIKE', $search)->orWhere('image','LIKE', $search)->paginate(10);
+        return view('livewire.search-slide-donors', compact('sliderDonor'));
     }
 }

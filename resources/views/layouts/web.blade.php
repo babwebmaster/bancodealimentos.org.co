@@ -56,6 +56,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         @if (Route::is('web.index'))
             <script src="{{ asset('js/dashboard.slideDonors.index.js') }}"></script>
+            <script src="{{ asset('js/dashboard.cifras.index.js') }}"></script>
+            <script rel="preload" src="{{ asset('js/home.js') }}" as="script"></script>
         @endif 
         <x-web.footer />
     </body>

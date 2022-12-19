@@ -17,9 +17,9 @@ class CifrasController extends Controller
      */
     public function index()
     {
-        $cifras = Cifras::orderBy('id', 'DESC')->paginate(3);
+        $cifras = Cifras::orderBy('id', 'DESC')->limit(5)->get();
         $category_cifras = CategoryCifras::all();
-        return view('dashboard.cifras.index-cifras', compact('cifras','category_cifras'));
+        return view('dashboard.cifras.index-cifras', ['cifras' => $cifras, 'category_cifras' => $category_cifras]);
     }
 
     /**
@@ -110,7 +110,7 @@ class CifrasController extends Controller
             $request->icon->move(public_path("images"), $fileName);
         }
         $validated["category"]=implode(",",$validated["category"]);
-        $cifra->create($validated);
+        $cifra->update($validated);
         // session()->flash('flash.banner', 'Usuario Editado Correctamente!');
         // session()->flash('flash.bannerStyle', 'success');
         // Alert::alert('Exito', 'Usuario Editado Correctamente!', 'success');
