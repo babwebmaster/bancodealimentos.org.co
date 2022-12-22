@@ -33,6 +33,9 @@
 .bg-white-transparent{
     background-color: #ffffff36;
 }
+.bg-red-bab{
+    background-color: #da2128;
+}
 .bg-bab{
     background-color: #011b47;
 }
@@ -47,6 +50,12 @@
 }
 .text-bab{
     color: #011b47;
+}
+.truncate-4{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 .bg-bab-shadow{
     background: rgba( 255, 255, 255, 0.4 );

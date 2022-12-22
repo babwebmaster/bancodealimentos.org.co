@@ -20,9 +20,9 @@
                     @if ($slider->btn_status == 'yes')
                         <a class="absolute z-20 left-1/2 -translate-x-2/4 bottom-12 w-72 text-center sm:w-[300px] px-4 py-2 bg-red-600 rounded card-logo no-underline text-white" href="{{  $slider->btn_url  }}">{{  $slider->btn_text  }}</a>
                     @endif
-                    @if (Route::is('web.index'))
+                    {{-- @if (Route::is('web.index'))
                         <x-web.carousel-svg />
-                    @endif
+                    @endif --}}
                 </div>
             @endif 
         @endforeach

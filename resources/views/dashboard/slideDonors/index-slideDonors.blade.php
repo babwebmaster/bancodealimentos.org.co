@@ -9,7 +9,7 @@
         <h1 class="text-center font-bold text-3xl mb-4 text-bab">{{ __('messages.Preview') }}</h1>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-bab-shadow overflow-hidden shadow-xl sm:rounded-lg border-none mb-8">
-                <x-carousel-donors :slideDonor="$slideDonor" />
+                <x-web.carousel-donors :slideDonor="$slideDonor" />
             </div>
             @livewire('search-slide-donors', ['slideDonor' => $slideDonor])
         </div>

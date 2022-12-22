@@ -15,7 +15,9 @@ class SearchCifras extends Component
     public function render()
     {
         $search = '%'.$this->search.'%';
-        $querySearch = Cifras::where('name','LIKE', $search)->orWhere('value','LIKE', $search);
+        $querySearch = Cifras::where('name','LIKE', $search)
+            ->orWhere('value','LIKE', $search)  
+            ->orWhere('category','LIKE', $search);
         return view('livewire.search-cifras',[
             'cifras' => $querySearch->paginate(5)
         ]);

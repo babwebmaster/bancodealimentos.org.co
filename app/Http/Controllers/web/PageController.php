@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Models\web\Cifras;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,9 +11,12 @@ class PageController extends Controller
 {
     public function index()
     {
+        $cifras = Cifras::where('published', '=', 'yes')->where('category', 'LIKE', '%inicio%')->get();
         $sliders = DB::table('slide_mains')->where('status', '=', 'yes')->get();
         $slideDonor = DB::table('slide_donors')->where('status', '=', 'yes')->get();
-        return view('web.index', compact(['sliders', 'slideDonor']));
+        $blog = new BlogController();
+        $posts = $blog->index();
+        return view('web.index', compact(['sliders', 'slideDonor', 'cifras', 'posts']));
     }
 
     public function ourValues()
