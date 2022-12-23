@@ -2,6 +2,9 @@
 
 @php
 switch ($align) {
+    case 'center':
+        $alignmentClasses = 'left-1/2 -translate-x-1/2';
+        break;
     case 'left':
         $alignmentClasses = 'origin-top-left left-0';
         break;
@@ -16,6 +19,7 @@ switch ($align) {
     default:
         $alignmentClasses = 'origin-top-right right-0';
         break;
+   
 }
 
 switch ($width) {

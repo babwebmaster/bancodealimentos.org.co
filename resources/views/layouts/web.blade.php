@@ -23,6 +23,7 @@
             <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         @endif
         <script rel="preload" src="{{ asset('js/main.js') }}" as="script"></script>
+        <script rel="preload" src="{{ asset('js/app.js') }}" as="script"></script>
     </head>
     <body class="antialiased">
         <!-- Modal -->

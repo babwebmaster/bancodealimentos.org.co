@@ -5,14 +5,17 @@
     </main>
     <x-web.static-content-index />
     <section data-sectionId="cifras" class="bg-bab-sky py-8 my-2">
-        <x-web.cifras :cifras="$cifras" :page="count($cifras)" />
+        <x-web.cifras :cifras="$cifras" />
+        <p class="text-center text-2xl font-semibold text-white my-8">Cifras del 1° de Enero de 2022 al {{$datecifras}}</p>
     </section>
     <section data-sectionId="nuestros_donantes_carousel" class="bg-white my-8">
-        <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl m-auto">
+        <x-web.title>Nuestros Donantes</x-web.title>
+        <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl mx-auto my-16">
             <x-web.carousel-donors :slideDonor="$slideDonor" />
         </div>
     </section>
-    <section class="bg-white my-8">
+    <section class="bg-gray-200 mt-8 py-8">
+        <x-web.title>Blog</x-web.title>
         <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl m-auto">
             <x-web.carousel-blog :posts="$posts" />
         </div>

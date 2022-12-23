@@ -1,5 +1,5 @@
-@props(['cifras','page'])
-<div {{ $attributes->merge(['class' => "w-full mx-auto my-2 px-2 py-6 bg-bab-sky grid gap-4 grid-cols-$page items-center"]) }} 
+@props(['cifras'])
+<div {{ $attributes->merge(['class' => "w-full mx-auto my-2 px-2 py-6 bg-bab-sky flex flex-col lg:flex-row justify-center items-center md:justify-around"]) }} 
     x-data
     x-intersect="counterLazy" 
 >

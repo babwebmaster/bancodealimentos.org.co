@@ -4,6 +4,7 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use App\Models\web\Cifras;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,11 +13,12 @@ class PageController extends Controller
     public function index()
     {
         $cifras = Cifras::where('published', '=', 'yes')->where('category', 'LIKE', '%inicio%')->get();
+        $datecifras = PageController::getDateCifras();
         $sliders = DB::table('slide_mains')->where('status', '=', 'yes')->get();
         $slideDonor = DB::table('slide_donors')->where('status', '=', 'yes')->get();
         $blog = new BlogController();
         $posts = $blog->index();
-        return view('web.index', compact(['sliders', 'slideDonor', 'cifras', 'posts']));
+        return view('web.index', compact(['sliders', 'slideDonor', 'cifras', 'posts', 'datecifras']));
     }
 
     public function ourValues()
@@ -82,6 +84,17 @@ class PageController extends Controller
     public function contactUs()
     {
         return view('web.contactUs');
+    }
+    public function getDateCifras(){
+        $datecifras = DB::table('cifras')->select('updated_at')->where('published', '=', 'yes')->where('category', 'LIKE', '%inicio%')->orderBy('updated_at', 'DESC')->first();
+        foreach ($datecifras as $dc) {
+            $fecha = Carbon::parse($dc);
+            $dia = $fecha->format('d');
+            $mes = ucfirst($fecha->formatLocalized('%B'));
+            $año = $fecha->format('Y');
+            $fsalida = $dia.' de '.$mes.' del '.$año;
+            return $fsalida;
+        }
     }
     
 }

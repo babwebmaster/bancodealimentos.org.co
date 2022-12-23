@@ -84,9 +84,9 @@
     opacity: 80;
     transition: .3s;
 }
-.menu-home .navbar-brand{
+/* .menu-home .navbar-brand{
     max-width: 200px;
-}
+} */
 footer img{
     max-width: 300px;
 }
