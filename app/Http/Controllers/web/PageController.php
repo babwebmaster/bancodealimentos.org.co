@@ -41,14 +41,24 @@ class PageController extends Controller
         return view('web.cashDonations');
     }
 
-    public function corporateValueProposition()
+    public function rsa()
     {
-        return view('web.corporateValueProposition');
+        return view('web.rsa');
     }
 
-    public function donationsInKind()
+    public function pni()
     {
-        return view('web.donationsInKind');
+        return view('web.pni');
+    }
+    
+    public function corabastos()
+    {
+        return view('web.corabastos');
+    }
+
+    public function prea()
+    {
+        return view('web.prea');
     }
 
     public function volunteering()
@@ -61,30 +71,38 @@ class PageController extends Controller
         return view('web.academy');
     }
 
-    public function corabastos()
+    public function donationsInKind()
     {
-        return view('web.corabastos');
+        return view('web.donationsInKind');
     }
 
-    public function prea()
+    public function beneficiaries()
     {
-        return view('web.prea');
+        return view('web.beneficiaries');
     }
 
-    public function ourWork()
+    public function beneficiary()
     {
-        return view('web.ourWork');
+        return view('web.beneficiary');
     }
 
-    public function linkUp()
+    public function iambeneficiary()
     {
-        return view('web.linkUp');
+        return view('web.iambeneficiary');
+    }
+
+    public function cookBooks()
+    {
+        return view('web.beneficiaries');
     }
 
     public function contactUs()
     {
-        return view('web.contactUs');
+        $blog = new BlogController();
+        $posts = $blog->index();
+        return view('web.contactUs', compact('posts'));
     }
+
     public function getDateCifras(){
         $datecifras = DB::table('cifras')->select('updated_at')->where('published', '=', 'yes')->where('category', 'LIKE', '%inicio%')->orderBy('updated_at', 'DESC')->first();
         foreach ($datecifras as $dc) {

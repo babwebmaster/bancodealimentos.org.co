@@ -1,25 +1,23 @@
 <section class="flex justify-center items-center bg-white p-4">
     <div class="flex flex-col md:flex-row justify-center items-center md:justify-around p-4" style="max-width:1440px; width:100%;margin:0 auto;">
-        <div class="border-slate-600 w-60 sm:w-72 md:w-80 h-72 my-8 md:my-0 border rounded-lg shadow-lg p-4 relative" style="background: url('http://bancodealimentos.org.co.test/images/m-1664643827.png'); background-position: center; background-size: cover;">
-            <h3 class="font-bold text-center uppercase text-2xl">Title</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem magni distinctio debitis minus harum corporis maiores praesentium! Ab, placeat nostrum.</p>
-            <a href="#" class="text-center m-auto block absolute z-10 left-1/2 top-100 -translate-y-1/2 -translate-x-1/2 bg-red-600 rounded-lg py-2 px-4 w-52 no-underline text-white">Button</a>
-        </div>
-        <div class="border-slate-600 w-60 sm:w-72 md:w-80 h-72 my-8 md:my-0 border rounded-lg shadow-lg p-4 relative" style="background: url('http://bancodealimentos.org.co.test/images/m-1664643827.png'); background-position: center; background-size: cover;">
-            <h3 class="font-bold text-center uppercase text-2xl">Title</h3>
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem magni distinctio debitis minus harum corporis maiores praesentium! Ab, placeat nostrum.</p>
-            <a href="#" class="text-center m-auto block absolute z-10 left-1/2 top-100 -translate-y-1/2 -translate-x-1/2 bg-red-600 rounded-lg py-2 px-4 w-52 no-underline text-white">Button</a>
-        </div>
-        <div class="border-slate-600 w-60 sm:w-72 md:w-80 h-72 my-8 md:my-0 border rounded-lg shadow-lg p-4 relative" style="background: url('http://bancodealimentos.org.co.test/images/m-1664643827.png'); background-position: center; background-size: cover;">
-            <h3 class="font-bold text-center uppercase text-2xl">Title</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem magni distinctio debitis minus harum corporis maiores praesentium! Ab, placeat nostrum.</p>
-            <a href="#" class="text-center m-auto block absolute z-10 left-1/2 top-100 -translate-y-1/2 -translate-x-1/2 bg-red-600 rounded-lg py-2 px-4 w-52 no-underline text-white">Button</a>
-        </div>
+        <x-web.card-index class="rounded-tl-2xl rounded-br-2xl" style="background: url('http://bancodealimentos.org.co.test/images/bonos-de-generosidad.png');">
+            <x-slot:title>Bonos de Generosidad</x-slot>
+            <x-slot:textButton>Saber Más</x-slot>
+        </x-web.card-index>
+        <x-web.card-index class="rounded-2xl" style="background: url('http://bancodealimentos.org.co.test/images/quiero-ser-beneficiario.png');">
+            <x-slot:title>Quiero ser Beneficiario</x-slot>
+            <x-slot:textButton>Saber Más</x-slot>
+        </x-web.card-index>
+        <x-web.card-index class="rounded-tr-2xl rounded-bl-2xl" style="background: url('http://bancodealimentos.org.co.test/images/quiero-ser-voluntario.png');">
+            <x-slot:title>Quiero ser Voluntario</x-slot>
+            <x-slot:textButton>Saber Más</x-slot>
+        </x-web.card-index>   
     </div>
 </section>
 <section data-sectionId="que_hace_el_banco" class="bg-white pb-16">
     <div class="max-w-7xl my-0 mx-auto">
-        <h2 class="text-center pt-8 md:pt-16 pb-8 font-bold text-red-bab">¿Qué hace el Banco de Alimentos?</h2>
+        <h2 class="text-center pt-8 md:pt-16 pb-2 font-bold text-red-bab">¿Qué hace el Banco de Alimentos?</h2>
+        <span class="block h-2 w-40 bg-bab rounded-full mx-auto mb-8"></span>
         <div class="block md:flex md:justify-around md:items-center">
             <div class="w-full md:w-1/2 p-4">
                 <p class="text-justify text-gray-600 font-semibold text-base">

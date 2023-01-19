@@ -27,16 +27,19 @@ Route::group(['prefix'=>'nosotros'], function(){
 });
 Route::group(['prefix'=>'ayudanos-a-ayudar'], function(){
     Route::get('/donaciones-en-efectivo', [PageController::class, 'cashDonations'])->name('web.cashDonations');
-    Route::get('/propuesta-de-valor-corporativo', [PageController::class, 'corporateValueProposition'])->name('web.corporateValueProposition');
+    Route::get('/responsabilidad-social-empresarial', [PageController::class, 'rsa'])->name('web.rsa');
+    Route::get('/programa-nutricion-integral', [PageController::class, 'pni'])->name('web.pni');
     Route::get('/donaciones-en-especie', [PageController::class, 'donationsInKind'])->name('web.donationsInKind');
-    Route::get('/voluntariado', [PageController::class, 'volunteering'])->name('web.volunteering');
+    Route::get('/voluntariado-corporativo', [PageController::class, 'volunteering'])->name('web.volunteering');
     Route::get('/academia', [PageController::class, 'academy'])->name('web.academy');
     Route::get('/corabastos', [PageController::class, 'corabastos'])->name('web.corabastos');
     Route::get('/prea', [PageController::class, 'prea'])->name('web.prea');
 });
 Route::group(['prefix'=>'beneficiarios'], function(){
-    Route::get('/nuestra-labor', [PageController::class, 'ourWork'])->name('web.ourWork');
-    Route::get('/vinculate', [PageController::class, 'linkUp'])->name('web.linkUp');
+    Route::get('/beneficiarios', [PageController::class, 'beneficiaries'])->name('web.beneficiaries');
+    Route::get('/quiero-ser-beneficiario', [PageController::class, 'beneficiary'])->name('web.beneficiary');
+    Route::get('/soy-beneficiario', [PageController::class, 'iambeneficiary'])->name('web.iambeneficiary');
+    Route::get('/recetarios', [PageController::class, 'cookBooks'])->name('web.cookBooks');
 });
 Route::get('/contactanos', [PageController::class, 'contactUs'])->name('web.contactUs');
 

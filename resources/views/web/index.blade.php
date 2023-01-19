@@ -4,7 +4,7 @@
         <x-web.carousel :sliders="$sliders" />
     </main>
     <x-web.static-content-index />
-    <section data-sectionId="cifras" class="bg-bab-sky py-8 my-2">
+    <section data-sectionId="cifras" class="bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-700 py-8 my-2">
         <x-web.cifras :cifras="$cifras" />
         <p class="text-center text-2xl font-semibold text-white my-8">Cifras del 1° de Enero de 2022 al {{$datecifras}}</p>
     </section>

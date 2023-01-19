@@ -12,22 +12,22 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="preload stylesheet" href="{{  asset('css/app.css')  }}" as="style">
-        <!-- Bootstrap CSS v5.0.2 -->
+       
         <link rel="preload stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" as="style">
         <link rel="preload stylesheet" href="{{  asset('css/styles.css')  }}" as="style">
         <!-- fontawesome -->
         <link rel="preload stylesheet" href="{{  asset('css/fa.css')  }}" as="style">
         <livewire:styles />
-        @if (Route::is('web.index'))
+        @if (Route::is('web.index') || Route::is('web.contactUs'))
             <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
             <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         @endif
         <script rel="preload" src="{{ asset('js/main.js') }}" as="script"></script>
-        <script rel="preload" src="{{ asset('js/app.js') }}" as="script"></script>
+        <script defer src="{{ asset('js/app.js') }}" as="script"></script>
     </head>
     <body class="antialiased">
         <!-- Modal -->
-        <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        {{-- <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <header class="w-100 h-100">
             <!--Top nav-->
             <x-web.top-navigation />
@@ -49,7 +49,7 @@
 
         @yield('content')
         
-
+        
         <x-web.button-whatsapp />
         <livewire:scripts />
         <!-- Bootstrap JavaScript Libraries -->  
@@ -60,6 +60,9 @@
             <script src="{{ asset('js/dashboard.cifras.index.js') }}"></script>
             <script rel="preload" src="{{ asset('js/home.js') }}" as="script"></script>
         @endif 
+        @if (Route::is('web.contactUs'))
+            <script rel="preload" src="{{ asset('js/home.js') }}" as="script"></script>
+        @endif
         <x-web.footer />
     </body>
 </html>

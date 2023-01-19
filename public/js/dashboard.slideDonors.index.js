@@ -4,6 +4,9 @@ const swiper = new Swiper('.swiper.donors', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 10,
+    autoplay: {
+        delay: 2000,
+    },
     breakpoints: {
         // when window width is >= 320px
         320: {
@@ -22,13 +25,13 @@ const swiper = new Swiper('.swiper.donors', {
         },
         // when window width is >= 991px
         991: {
-            slidesPerView: 8,
+            slidesPerView: 7,
             spaceBetween: 10
         },
         // when window width is >= 1024px
         1024: {
-            slidesPerView: 10,
-            spaceBetween: 10
+            slidesPerView: 8,
+            spaceBetween: 40
         }
     },
     // If we need pagination

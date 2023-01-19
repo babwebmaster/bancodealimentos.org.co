@@ -4,6 +4,9 @@ const swiperBlog = new Swiper('.swiper.blog', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 10,
+    autoplay: {
+        delay: 3500,
+    },
     breakpoints: {
         // when window width is >= 320px
         320: {

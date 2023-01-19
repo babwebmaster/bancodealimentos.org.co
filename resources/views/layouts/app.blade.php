@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         @livewireStyles
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script defer src="{{ mix('js/app.js') }}"></script>
     </head>
     <body class="font-sans antialiased h-screen md:overflow-y-hidden  bg-gray-100">
         
