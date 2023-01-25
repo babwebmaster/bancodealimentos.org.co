@@ -144,6 +144,9 @@
                     <x-jet-nav-link href="{{ route('cifras.index') }}" :active="request()->routeIs('cifras.index') || request()->routeIs('cifras.show') || request()->routeIs('cifras.create') || request()->routeIs('cifras.edit')">
                         {{ __('messages.Cifras') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('reconocimientos.index') }}" :active="request()->routeIs('reconocimientos.index') || request()->routeIs('reconocimientos.show') || request()->routeIs('reconocimientos.create') || request()->routeIs('reconocimientos.edit')">
+                        {{ __('messages.Reconocimientos') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
             
@@ -244,6 +247,9 @@
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('cifras.index') }}" :active="request()->routeIs('cifras.index') || request()->routeIs('cifras.show') || request()->routeIs('cifras.create') || request()->routeIs('cifras.edit')">
                     {{ __('messages.Cifras') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('reconocimientos.index') }}" :active="request()->routeIs('reconocimientos.index') || request()->routeIs('reconocimientos.show') || request()->routeIs('reconocimientos.create') || request()->routeIs('reconocimientos.edit')">
+                    {{ __('messages.Reconocimientos') }}
                 </x-jet-responsive-nav-link>
             </div>
         </div>

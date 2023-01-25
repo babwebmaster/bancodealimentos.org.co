@@ -15,6 +15,9 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
+            <div class="my-4">  
+                <h3 class="text-center font-bold text-white">{{  __('messages.Register')  }}</h3>
+            </div>
 
             <div>
                 <x-jet-label for="name" value="{{ __('messages.Name') }}" />

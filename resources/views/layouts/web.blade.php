@@ -18,7 +18,7 @@
         <!-- fontawesome -->
         <link rel="preload stylesheet" href="{{  asset('css/fa.css')  }}" as="style">
         <livewire:styles />
-        @if (Route::is('web.index') || Route::is('web.contactUs'))
+        @if (in_array(Route::currentRouteName(),['web.index', 'web.contactUs', 'web.ourValues','web.ourLeaders','web.managementReports','web.cashDonations','web.rsa','web.pni','web.donationsInKind','web.volunteering','web.academy','web.corabastos','web.prea','web.beneficiaries','web.beneficiary','web.iambeneficiary','web.cookBooks']))
             <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
             <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         @endif
@@ -46,9 +46,14 @@
             <x-web.navigation-menu />
         </header>
 
-
         @yield('content')
-        
+
+        <section class="bg-gray-200 mt-8 py-8">
+            <x-web.title>Blog</x-web.title>
+            <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl m-auto">
+                <x-web.carousel-blog :posts="$posts" />
+            </div>
+        </section>
         
         <x-web.button-whatsapp />
         <livewire:scripts />
@@ -58,10 +63,13 @@
         @if (Route::is('web.index'))
             <script src="{{ asset('js/dashboard.slideDonors.index.js') }}"></script>
             <script src="{{ asset('js/dashboard.cifras.index.js') }}"></script>
-            <script rel="preload" src="{{ asset('js/home.js') }}" as="script"></script>
         @endif 
-        @if (Route::is('web.contactUs'))
+        @if (in_array(Route::currentRouteName(),['web.index', 'web.contactUs', 'web.ourValues','web.ourLeaders','web.managementReports','web.cashDonations','web.rsa','web.pni','web.donationsInKind','web.volunteering','web.academy','web.corabastos','web.prea','web.beneficiaries','web.beneficiary','web.iambeneficiary','web.cookBooks']))
             <script rel="preload" src="{{ asset('js/home.js') }}" as="script"></script>
+        @endif
+        @if (Route::is('web.ourValues'))
+            <script src="{{ asset('js/dashboard.cifras.index.js') }}"></script>
+            <script rel="preload" src="{{ asset('js/ourValues.js') }}" as="script"></script>
         @endif
         <x-web.footer />
     </body>

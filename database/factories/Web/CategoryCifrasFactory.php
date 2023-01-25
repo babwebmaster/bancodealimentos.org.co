@@ -17,7 +17,27 @@ class CategoryCifrasFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'nombre' => $this->randomNames(),
         ];
+    }
+    public function randomNames(){
+        $rn = [0,1,2,3];
+        switch ($rn) {
+            case '1':
+                return 'inicio';
+                break;
+            case '2':
+                return 'sobre-nosotros';
+                break;
+            case '3':
+                return 'corabastos';
+                break;
+            case '4':
+                return 'prea';
+                break;
+            default:
+                return 'inicio';
+                break;
+        }
     }
 }

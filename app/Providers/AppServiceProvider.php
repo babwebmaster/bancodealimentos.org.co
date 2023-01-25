@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\web\BlogController;
 use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,5 +30,16 @@ class AppServiceProvider extends ServiceProvider
          */
         Carbon::setLocale(config('app.locale'));
         setlocale(LC_TIME, config('app.locale'));
+        /**
+         *  Generate data $posts in layout web for all views web
+         */
+        view()->composer(
+            'layouts.web', 
+            function ($view) {
+                $blog = new BlogController();
+                $posts = $blog->index();
+                $view->with('posts', $posts);
+            }
+        );
     }
 }

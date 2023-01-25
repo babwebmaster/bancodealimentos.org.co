@@ -170,7 +170,7 @@ return [
     'Create figure' => 'Crear cifra',
     'Select on the pages where this figure is to be displayed' => 'Selecciona en las paginas donde se va a visualizar esta cifra',
     'This action will delete this field directly in the database, are you sure you want to delete it? ' => 'Esta acción Eliminara este campo directamente en la base de datos, esta seguro que quiere Eliminar? ',
-    '' => '',
+    'Reconocimientos' => 'Reconocimientos',
     '' => '',
     '' => '',
     '' => '',

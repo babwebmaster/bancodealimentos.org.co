@@ -175,6 +175,7 @@ footer .twitter-timeline.twitter-timeline-rendered{
 .swiper {
     width: 100%;
     height: 100%;
+    max-width: 100%;
 }
 .max-w-top-nav,
 .nav-container{
@@ -195,6 +196,11 @@ tbody tr td:last-child { border-top-right-radius: 5px; border-bottom-right-radiu
     radial-gradient(ellipse at top right, rgba(255, 228, 132, 0.5), transparent 50%),
     radial-gradient(ellipse at center right, rgba(112.520718, 44.062154, 249.437846, 0.5), transparent 50%),
     radial-gradient(ellipse at center left, rgba(214,51,132, 0.5), transparent 50%);
+}
+.bg-our-values{
+    background-image: url(/images/ourValues.png);
+    background-size: cover;
+    background-position: bottom center;
 }
 @media screen and (max-width: 576px) {
     /* datatables */

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\web\CategoryCifras;
 use App\Models\web\Cifras;
 use App\Models\web\SlideMain;
 use App\Models\web\SlideDonors;
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
         SlideMain::factory(3)->create();
         SlideDonors::factory(30)->create();
+        CategoryCifras::factory(4)->create();
         Cifras::factory(9)->create();
     }
 }

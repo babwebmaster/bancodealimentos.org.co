@@ -1,4 +1,4 @@
-@extends('layouts.web')
+@extends('layouts.web', ['posts' => $posts])
 @section('content')
     <main class="pt-[76.6px] bg-bab">
         <x-web.carousel :sliders="$sliders" />
@@ -13,12 +13,5 @@
         <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl mx-auto my-16">
             <x-web.carousel-donors :slideDonor="$slideDonor" />
         </div>
-    </section>
-    <section class="bg-gray-200 mt-8 py-8">
-        <x-web.title>Blog</x-web.title>
-        <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl m-auto">
-            <x-web.carousel-blog :posts="$posts" />
-        </div>
-        <!-- Slider main container -->
     </section>
 @endsection

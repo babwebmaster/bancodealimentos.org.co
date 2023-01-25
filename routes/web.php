@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\dashboard\CifrasController;
 use App\Http\Controllers\web\PageController;
+use App\Models\web\Reconocimientos;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +63,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'prefix' => 'dashboa
         Route::resource('slide', SlideMainController::class);
         Route::resource('slide-donors', SlideDonorsController::class);
         Route::resource('cifras', CifrasController::class);
+        Route::resource('reconocimientos', ReconocimientosController::class);
     });
 
 });

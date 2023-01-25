@@ -23,7 +23,9 @@ class PageController extends Controller
 
     public function ourValues()
     {
-        return view('web.ourValues');
+        $cifras = Cifras::where('published', '=', 'yes')->where('category', 'LIKE', '%nuestros-valores%')->get();
+        $datecifras = PageController::getDateCifras();
+        return view('web.ourValues', compact(['cifras', 'datecifras']));
     }
 
     public function ourLeaders()

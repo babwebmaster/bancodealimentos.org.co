@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('content')
-    <main>
-        <h1 class="mt-16 md:mt-5 text-center pt-8 md:pt-16 pb-2 font-bold text-red-bab">Contactanos</h1>
+    <main class="pt-[76.6px]">
+        <h1 class="mt-5 text-center pb-2 font-bold text-red-bab">Contactanos</h1>
         <span class="block h-2 w-40 bg-bab rounded-full mx-auto mb-8"></span>
         <div class="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-around bg-contact-us md:py-8 md:px-4 md:mb-4">
             <div class="flex flex-col justify-around items-center my-2 md:my-8">
@@ -72,15 +72,15 @@
                             <h3 class="text-center font-bold text-white text-shadow">{{  __('¡Contactanos!')  }}</h3>
                         </div>
                         <div class="mb-2">
-                            <x-jet-label class="text-shadow" for="names" value="{{ __('Nombres Completos') }}" />
+                            <x-jet-label class="text-shadow text-white" for="names" value="{{ __('Nombres Completos') }}" />
                             <x-jet-input id="names" class="block mt-1 w-full text-white" type="text" name="names" required />
                         </div>
                         <div class="mb-2">
-                            <x-jet-label class="text-shadow" for="email" value="{{ __('messages.Email') }}" />
+                            <x-jet-label class="text-shadow text-white" for="email" value="{{ __('messages.Email') }}" />
                             <x-jet-input id="email" class="block mt-1 w-full text-white" type="email" name="email" required />
                         </div>
                         <div class="mb-2">
-                            <x-jet-label class="text-shadow" for="messages" value="{{ __('Dejanos un mensaje') }}" />
+                            <x-jet-label class="text-shadow text-white" for="messages" value="{{ __('Dejanos un mensaje') }}" />
                             <textarea id="email" class="block mt-1 w-full bg-transparent border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-white" name="message" rows="3" required ></textarea>
                         </div>
                         <div class="block mb-2">
@@ -100,7 +100,7 @@
         </div>
         <div class="hidden md:block h-16"></div>
     </section>
-    <section class="bg-gray-200 md:mt-8 py-8">
+    <section class="bg-gray-200 md:mt-8 py-8" aria-label="Blog del Banco de Alimentos de Bogotá">
         <x-web.title>Blog</x-web.title>
         <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl m-auto">
             <x-web.carousel-blog :posts="$posts" />
