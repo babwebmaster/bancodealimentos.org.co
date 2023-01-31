@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\CategoryCifrasController;
 use App\Http\Controllers\dashboard\CifrasController;
 use App\Http\Controllers\web\PageController;
 use App\Models\web\Reconocimientos;
@@ -26,6 +27,9 @@ Route::group(['prefix'=>'nosotros'], function(){
     Route::get('/nuestros-lideres', [PageController::class, 'ourLeaders'])->name('web.ourLeaders');
     Route::get('/informes-de-gestion', [PageController::class, 'managementReports'])->name('web.managementReports');
 });
+Route::get('/nosotros', function () {
+    return redirect('/nosotros/nuestros-valores');
+});
 Route::group(['prefix'=>'ayudanos-a-ayudar'], function(){
     Route::get('/donaciones-en-efectivo', [PageController::class, 'cashDonations'])->name('web.cashDonations');
     Route::get('/responsabilidad-social-empresarial', [PageController::class, 'rsa'])->name('web.rsa');
@@ -36,11 +40,17 @@ Route::group(['prefix'=>'ayudanos-a-ayudar'], function(){
     Route::get('/corabastos', [PageController::class, 'corabastos'])->name('web.corabastos');
     Route::get('/prea', [PageController::class, 'prea'])->name('web.prea');
 });
+Route::get('/ayudanos-a-ayudar', function () {
+    return redirect('/ayudanos-a-ayudar/donaciones-en-efectivo');
+});
 Route::group(['prefix'=>'beneficiarios'], function(){
     Route::get('/beneficiarios', [PageController::class, 'beneficiaries'])->name('web.beneficiaries');
     Route::get('/quiero-ser-beneficiario', [PageController::class, 'beneficiary'])->name('web.beneficiary');
     Route::get('/soy-beneficiario', [PageController::class, 'iambeneficiary'])->name('web.iambeneficiary');
     Route::get('/recetarios', [PageController::class, 'cookBooks'])->name('web.cookBooks');
+});
+Route::get('/beneficiarios', function () {
+    return redirect('/beneficiarios/beneficiarios');
 });
 Route::get('/contactanos', [PageController::class, 'contactUs'])->name('web.contactUs');
 
@@ -63,6 +73,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'prefix' => 'dashboa
         Route::resource('slide', SlideMainController::class);
         Route::resource('slide-donors', SlideDonorsController::class);
         Route::resource('cifras', CifrasController::class);
+        Route::resource('categoria-cifra', CategoryCifrasController::class);
         Route::resource('reconocimientos', ReconocimientosController::class);
     });
 

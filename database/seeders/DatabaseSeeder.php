@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
         SlideMain::factory(3)->create();
         SlideDonors::factory(30)->create();
-        CategoryCifras::factory(4)->create();
+        $this->call([CategoryCifrasSeeder::class]);
         Cifras::factory(9)->create();
     }
 }

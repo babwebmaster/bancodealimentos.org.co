@@ -5,6 +5,7 @@ namespace App\Http\Controllers\dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\web\CategoryCifras;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryCifrasController extends Controller
 {
@@ -82,6 +83,6 @@ class CategoryCifrasController extends Controller
      */
     public function destroy(CategoryCifras $categoryCifras)
     {
-        //
+        dd($categoryCifras);
     }
 }

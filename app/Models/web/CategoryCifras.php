@@ -9,6 +9,6 @@ class CategoryCifras extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
+        'nombre',
     ];
 }

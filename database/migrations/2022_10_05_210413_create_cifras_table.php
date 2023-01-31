@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('value');
             $table->string('icon');
             $table->enum('published', ['yes', 'not'])->default('not');
-            $table->string('category')->default('inicio');
+            $table->string('category')->default('uncategorize');
             $table->timestamps();
         });
     }
