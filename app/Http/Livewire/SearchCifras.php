@@ -28,6 +28,7 @@ class SearchCifras extends Component
             'categoryCifras' => $categoryCifras
         ]);
     }
+
     public function create()
     {
         $this->validate([
@@ -43,6 +44,7 @@ class SearchCifras extends Component
         Alert::toast('Categoria Cifra Creada Correctamente!', 'success');
         return to_route('cifras.index');
     }
+    
     public function destroy(CategoryCifras $categoryCifras)
     {
         $categoryCifras->delete();

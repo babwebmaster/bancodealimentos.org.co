@@ -83,6 +83,6 @@ class CategoryCifrasController extends Controller
      */
     public function destroy(CategoryCifras $categoryCifras)
     {
-        dd($categoryCifras);
+        //
     }
 }

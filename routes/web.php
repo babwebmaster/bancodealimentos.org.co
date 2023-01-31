@@ -73,7 +73,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'prefix' => 'dashboa
         Route::resource('slide', SlideMainController::class);
         Route::resource('slide-donors', SlideDonorsController::class);
         Route::resource('cifras', CifrasController::class);
-        Route::resource('categoria-cifra', CategoryCifrasController::class);
         Route::resource('reconocimientos', ReconocimientosController::class);
     });
 
