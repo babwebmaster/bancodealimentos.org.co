@@ -25,7 +25,18 @@
                     <span>{{  __('messages.Image published')  }}: {{  $cifra->status == 'yes'?'si':'no' }}</span>
                     <br>
                     <br>
-                    <span>{{  __('messages.Categories')  }}: {{  $cifra->category }}</span>
+                    <div class="flex">
+                        <p>
+                            {{  __('messages.Categories')  }}: &nbsp; 
+                        </p>
+                        <ul>
+                            @foreach ($cifra->categoryCifras as $cc)
+                                <li>
+                                    {{  $cc->nombre }}
+                                </li>        
+                            @endforeach
+                        </ul>
+                    </div>
                     <br>
                     <br>
                     <span>{{  __('messages.Dimensions')  }}: 600x600</span>

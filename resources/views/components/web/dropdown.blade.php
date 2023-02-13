@@ -1,4 +1,4 @@
-@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-1 bg-white', 'dropdownClasses' => ''])
+@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-1 bg-white', 'dropdownClasses' => '','hover' => true])
 
 @php
 switch ($align) {
@@ -26,11 +26,18 @@ switch ($width) {
     case '48':
         $width = 'w-48';
         break;
+    default:
+        $width = 'w-'.$width;
+        break;
 }
 @endphp
 
-<div class="relative" x-data="{ open: false }" @click.away="open = false" @close.stop="open = false" @mouseover="open = true" @mouseleave="open = false">
-    <div @click="open = ! open">
+@if ($hover === true) 
+    <div {{  $attributes->merge(['class' => 'relative']) }} x-data="{ open: false }" @click.away="open = false" @close.stop="open = false" @mouseover="open = true" @mouseleave="open = false">
+@else
+    <div {{  $attributes->merge(['class' => 'relative']) }} x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
+@endif
+    <div >
         {{ $trigger }}
     </div>
 

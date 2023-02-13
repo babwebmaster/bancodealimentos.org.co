@@ -64,12 +64,17 @@
                         <div class="my-2 flex justify-between">
                             <p class="text-left text-bab">{{  $cc->nombre  }}</p>
                             <input 
-                                @if(strstr($cifra->category, $cc->nombre)) checked @endif
+                                @foreach ($cifra->categoryCifras as $category)
+                                    @if ($category->nombre == $cc->nombre)
+                                            checked     
+                                    @endif
+                                @endforeach
+                                {{-- @if(strstr($cifra->category, $cc->nombre)) checked @endif --}}
                                 class="rounded border-gray-700" 
                                 type="checkbox" 
                                 id="category-{{  $cc->id  }}" 
                                 name="category[]" 
-                                value="{{  $cc->nombre  }}"
+                                value="{{  $cc->id  }}"
                             />
                         </div>
                     @endforeach

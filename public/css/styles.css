@@ -73,6 +73,9 @@
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.border-bab{
+    border: 1px solid #011b47;
+}
 .text-shadow{
     text-shadow: 1px 1px 3px #333;
 }
@@ -201,6 +204,44 @@ tbody tr td:last-child { border-top-right-radius: 5px; border-bottom-right-radiu
     background-image: url(/images/ourValues.png);
     background-size: cover;
     background-position: bottom center;
+}
+.timeline::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 4px;
+    background: #011b47;
+}
+.triangle-left::before{
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid #d1d5db;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: block;
+}
+.triangle-right::before{
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-right: 15px solid #d1d5db;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: block;
 }
 @media screen and (max-width: 576px) {
     /* datatables */

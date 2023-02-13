@@ -20,9 +20,9 @@ class ReconocimientosFactory extends Factory
             'title' => $this->faker->name,
             'content' => $this->faker->text(25),
             'image' => $this->faker->url(),
-            'icon' => 'trophy',
-            'color' => '011b47',
-            'fecha_anuncio' => $this->faker->date()
+            'icon' => 'fa-solid fa-trophy',
+            'color' => '#011b47',
+            'date_announcement' => $this->faker->date()
         ];
     }
 }

@@ -6,8 +6,12 @@
     </x-slot>
 
     <div class="py-12">
-        <h1 class="text-center font-bold text-3xl mb-4 text-bab">{{ __('messages.Preview') }}</h1>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-8">
+            @livewire('search-reconocimientos', ['reconocimientos' => $reconocimientos])
+        </div>
+        <h1 class="text-center font-bold text-3xl mb-8 text-bab">{{ __('messages.Preview') }}</h1>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 relative">
+            <x-web.reconocimientos :reconocimientos="$reconocimientos"></x-web.reconocimientos>
         </div>
     </div>
 </x-app-layout>

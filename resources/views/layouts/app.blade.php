@@ -92,5 +92,8 @@
         @if (Route::is('cifras.index'))
             <script src="{{ asset('js/dashboard.cifras.index.js') }}"></script>
         @endif
+        @if (Route::is('reconocimientos.create') || Route::is('reconocimientos.edit'))
+            <script src="{{ asset('js/dashboard.reconocimientos.js') }}"></script>
+        @endif
     </body>
 </html>

@@ -14,6 +14,6 @@ class Reconocimientos extends Model
         'image', 
         'icon', 
         'color', 
-        'fecha_anuncio' 
+        'date_announcement' 
     ];
 }

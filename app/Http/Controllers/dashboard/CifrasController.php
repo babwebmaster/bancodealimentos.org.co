@@ -5,6 +5,7 @@ namespace App\Http\Controllers\dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\web\CategoryCifras;
 use App\Models\web\Cifras;
+use App\Models\web\CifrasCategoryCifra;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -34,6 +35,11 @@ class CifrasController extends Controller
         return view('dashboard.cifras.create-cifras', compact('cifra','category_cifras'));
     }
 
+    public function createCifrasCategoryCifras($categoryCifras, $idCifra)
+    {
+        $cifra = Cifras::find($idCifra);
+        $cifra->categoryCifras()->attach($categoryCifras);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -52,8 +58,15 @@ class CifrasController extends Controller
         $fileName = env('APP_URL')."images"."/".'d-'.time().'.'.$validated["icon"]->extension();
         $validated["icon"]=$fileName;
         $request->icon->move(public_path("images"), $fileName);
-        $validated["category"]=implode(",",$validated["category"]);
-        Cifras::create($validated);
+        //a variable is created and the category data is assigned to it.
+            $categoryCifras = $validated["category"];
+        //I remove from the validation array the item category that contains the categories because I already assigned it to the variable :$categoryCifras
+            unset($validated["category"]);
+        //I store the id of the insertion in the variable :$idCifra 
+            $idCifra = Cifras::create($validated);
+        //send the categories data and the id of the number to create the many-to-many relationship in the pivot table cifras_category_cifras
+            $this->createCifrasCategoryCifras($categoryCifras, $idCifra->id);
+
         session()->flash('flash.banner', 'Cifra Creado Correctamente!');
         session()->flash('flash.bannerStyle', 'success');
         // Alert::alert('Exito', 'Usuario Creado Correctamente!', 'success');
@@ -64,7 +77,7 @@ class CifrasController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\web\Cifras  $cifras
+     * @param  \App\Models\web\Cifras  $cifra
      * @return \Illuminate\Http\Response
      */
     public function show(Cifras $cifra)
@@ -83,6 +96,7 @@ class CifrasController extends Controller
         $category_cifras = CategoryCifras::all();
         return view('dashboard.cifras.edit-cifras', compact('cifra','category_cifras'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -109,7 +123,11 @@ class CifrasController extends Controller
             $validated["icon"]=$fileName;
             $request->icon->move(public_path("images"), $fileName);
         }
-        $validated["category"]=implode(",",$validated["category"]);
+        //a variable is created and the category data is assigned to it.
+            $categoryCifras = $validated["category"];
+        //I remove from the validation array the item category that contains the categories because I already assigned it to the variable :$categoryCifras
+            unset($validated["category"]);
+        $cifra->categoryCifras()->sync($categoryCifras);
         $cifra->update($validated);
         // session()->flash('flash.banner', 'Usuario Editado Correctamente!');
         // session()->flash('flash.bannerStyle', 'success');
@@ -126,11 +144,12 @@ class CifrasController extends Controller
      */
     public function destroy(Cifras $cifra)
     {
-        $cifra->delete();
-        // session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
-        // session()->flash('flash.bannerStyle', 'success');
-        Alert::alert('Exito', 'Cifra Eliminada Correctamente!', 'success');
-        // Alert::toast('Slider Eliminado Correctamente!', 'success');
+        $delete = $cifra->delete();
+        if($delete){
+            Alert::alert('Exito', 'Cifra Eliminada Correctamente!', 'success');
+        }else{
+            Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
+        }
         return to_route("cifras.index");
     }
 }

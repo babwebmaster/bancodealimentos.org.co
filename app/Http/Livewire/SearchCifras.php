@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\web\CategoryCifras;
 use App\Models\web\Cifras;
+use App\Models\web\CifrasCategoryCifra;
 use Livewire\Component;
 use Livewire\WithPagination;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -16,16 +17,20 @@ class SearchCifras extends Component
     public $openModal = false;
     public $nombre;
 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+
     public function render()
     {
         $categoryCifras = CategoryCifras::all();
         $search = '%'.$this->search.'%';
         $querySearch = Cifras::where('name','LIKE', $search)
-            ->orWhere('value','LIKE', $search)  
-            ->orWhere('category','LIKE', $search);
+            ->orWhere('value','LIKE', $search);
         return view('livewire.search-cifras',[
             'cifras' => $querySearch->paginate(5),
-            'categoryCifras' => $categoryCifras
+            'categoryCifras' => $categoryCifras,
         ]);
     }
 
@@ -47,6 +52,7 @@ class SearchCifras extends Component
     
     public function destroy(CategoryCifras $categoryCifras)
     {
+        $categoryCifras->cifras()->detach();
         $categoryCifras->delete();
         Alert::toast('Categoria Cifra Eliminada Correctamente!', 'success');
         return to_route('cifras.index');

@@ -11,4 +11,8 @@ class CategoryCifras extends Model
     protected $fillable = [
         'nombre',
     ];
+    public function cifras()
+    {
+        return $this->belongsToMany(Cifras::class, 'cifras_category_cifras')->withTimestamps();
+    }
 }

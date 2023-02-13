@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('icon');
             $table->string('color');
-            $table->date('fecha_anuncio');
+            $table->date('date_announcement');
             $table->timestamps();
         });
     }

@@ -54,6 +54,8 @@
                     </small>
                 </div>
                 <hr class="border-t border-gray-500">
+                <div class="flex">
+                </div>
                 <div class="my-5">
                     <label for="category" class="mb-3 block text-base font-medium text-black">
                         {{  __('messages.Categories')  }}
@@ -62,12 +64,10 @@
                     @foreach ($category_cifras as $cc)
                         <div class="my-2 flex justify-between">
                             <p class="pl-2 text-left text-bab">{{  $cc->nombre  }}</p>
-                            <input 
-                                class="rounded border-gray-700" 
-                                type="checkbox" 
+                            <x-jet-checkbox 
                                 id="category-{{  $cc->id  }}" 
                                 name="category[]" 
-                                value="{{  $cc->nombre  }}"
+                                value="{{  $cc->id  }}"
                             />
                         </div>
                     @endforeach

@@ -152,11 +152,12 @@ class SlideMainController extends Controller
      */
     public function destroy(SlideMain $slide)
     {
-        $slide->delete();
-        // session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
-        // session()->flash('flash.bannerStyle', 'success');
-        // Alert::alert('Exito', 'Usuario Eliminado Correctamente!', 'success');
-        Alert::toast('Slider Eliminado Correctamente!', 'success');
+        $delete = $slide->delete();
+        if($delete){
+            Alert::toast('Slider Eliminado Correctamente!', 'success');
+        }else{
+            Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
+        }
         return to_route("slide.index");
     }
 }

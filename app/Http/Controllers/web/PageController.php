@@ -4,6 +4,7 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use App\Models\web\Cifras;
+use App\Models\web\Reconocimientos;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +13,9 @@ class PageController extends Controller
 {
     public function index()
     {
-        $cifras = Cifras::where('published', '=', 'yes')->where('category', 'LIKE', '%inicio%')->get();
+        $cifras = Cifras::where('published', '=', 'yes')->whereRelation('CategoryCifras','nombre','inicio',true)->get();
+        // dd($cifras);
+        // $cifras = Cifras::where('published', '=', 'yes')->where('category', 'LIKE', '%inicio%')->get();
         $datecifras = PageController::getDateCifras();
         $sliders = DB::table('slide_mains')->where('status', '=', 'yes')->get();
         $slideDonor = DB::table('slide_donors')->where('status', '=', 'yes')->get();
@@ -23,9 +26,10 @@ class PageController extends Controller
 
     public function ourValues()
     {
-        $cifras = Cifras::where('published', '=', 'yes')->where('category', 'LIKE', '%nuestros-valores%')->get();
+        $reconocimientos = Reconocimientos::orderByRaw('date_announcement DESC')->get();
+        $cifras = Cifras::where('published', '=', 'yes')->whereRelation('CategoryCifras','nombre','nuestros-valores',true)->get();
         $datecifras = PageController::getDateCifras();
-        return view('web.ourValues', compact(['cifras', 'datecifras']));
+        return view('web.ourValues', compact(['cifras', 'datecifras', 'reconocimientos']));
     }
 
     public function ourLeaders()
@@ -106,15 +110,17 @@ class PageController extends Controller
     }
 
     public function getDateCifras(){
-        $datecifras = DB::table('cifras')->select('updated_at')->where('published', '=', 'yes')->where('category', 'LIKE', '%inicio%')->orderBy('updated_at', 'DESC')->first();
-        foreach ($datecifras as $dc) {
-            $fecha = Carbon::parse($dc);
+        // $datecifras = DB::table('cifras')->select('updated_at')->where('published', '=', 'yes')->where('category', 'LIKE', '%inicio%')->orderBy('updated_at', 'DESC')->first();
+        $datecifras = Cifras::select('updated_at')->whereRelation('CategoryCifras','nombre','inicio',true)->orderBy('updated_at', 'DESC')->first();
+        // foreach ($datecifras as $dc) {
+            $fecha = Carbon::parse($datecifras->updated_at);
             $dia = $fecha->format('d');
             $mes = ucfirst($fecha->formatLocalized('%B'));
             $año = $fecha->format('Y');
             $fsalida = $dia.' de '.$mes.' del '.$año;
+            // dd($fsalida);
             return $fsalida;
-        }
+        // }
     }
     
 }

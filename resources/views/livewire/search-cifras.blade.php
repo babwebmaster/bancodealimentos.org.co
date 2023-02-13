@@ -10,7 +10,6 @@
             <x-jet-button wire:click="$set('openModal', true)" wire:loading.attr="disabled">
                 {{ __('messages.Categories') }}
             </x-jet-button>
-    
             <!-- Delete User Confirmation Modal -->
             <x-jet-dialog-modal wire:model="openModal">
                 <x-slot name="title">
@@ -23,11 +22,11 @@
                                 @foreach ($categoryCifras as $cc)
                                     <li>
                                         {{  $cc->nombre  }}
-                                        <form class=" inline-block text-red-600" wire:submit.prevent='destroy({{$cc->id}})'>
+                                        {{-- <form class=" inline-block text-red-600" wire:submit.prevent='destroy({{$cc->id}})'>
                                             <button type="submit" title="{{  __('messages.Delete')  }}" >
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </button>
-                                        </form>
+                                        </form> --}}
                                     </li>   
                                 @endforeach
                             </ul>
@@ -92,9 +91,10 @@
                         </td>
                         <td class="px-4 py-4">
                             <ul>
-                                @foreach (explode(',',$c->category) as $cat)
-                                    <li>{{  $cat  }}</li>
+                                @foreach ($c->categoryCifras as $cat)
+                                    <li>{{  $cat->nombre  }}</li>
                                 @endforeach
+                                
                             </ul>
                         </td>
                         <td class="px-4 py-4 flex justify-around gap-2">

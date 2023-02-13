@@ -108,12 +108,16 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     { 
-        $user->delete();
+        $delete = $user->delete();
+        if($delete){
+            Alert::toast('Usuario Eliminado Correctamente!', 'success');
+        }else{
+            Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
+        }
+        return to_route("user.index");
         // session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
         // session()->flash('flash.bannerStyle', 'success');
         // Alert::alert('Exito', 'Usuario Eliminado Correctamente!', 'success');
-        Alert::toast('Usuario Eliminado Correctamente!', 'success');
-        return to_route("user.index");
     }
 
 }

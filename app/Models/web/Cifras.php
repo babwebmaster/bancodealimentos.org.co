@@ -4,6 +4,7 @@ namespace App\Models\web;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Livewire\WithPagination;
 
 class Cifras extends Model
 {
@@ -15,4 +16,8 @@ class Cifras extends Model
         'published',
         'category'
     ];
+    public function categoryCifras()
+    {
+        return $this->belongsToMany(CategoryCifras::class,'cifras_category_cifras')->withTimestamps();    
+    }
 }

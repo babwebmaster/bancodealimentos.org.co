@@ -66,7 +66,7 @@
                     </div>
                 </x-slot>
             </x-web.dropdown>
-            <x-web.dropdown align="left" width="60">
+            <x-web.dropdown align="left" width="96">
                 <x-slot name="trigger">
                     <x-jet-nav-link class=" whitespace-nowrap no-underline hover:text-white">
                         {{ __('Blog') }} &nbsp;
@@ -171,7 +171,7 @@
                 </div>
             </x-slot>
         </x-web.dropdown>
-        <x-web.dropdown align="center" width="60">
+        <x-web.dropdown align="center" width="96">
             <x-slot name="trigger">
                 <x-web.nav-link class=" cursor-pointer whitespace-nowrap no-underline hover:text-white">
                     {{ __('Blog') }} &nbsp;
