@@ -35,12 +35,12 @@
         </div>
     </div>
     <div class="aspect-video flex justify-center items-cenetr flex-col bg-our-values px-4 py-6">
-        <h3 class="text-center text-red-bab font-semibold text-xl">
-            2. RESPETO CON EQUIDAD
+        <h3 class="text-center text-red-bab font-semibold text-xl uppercase text-shadow">
+            5. Compromiso con efectividad
         </h3>
         <p class="text-left text-white w-5/12 mx-auto text-shadow">
-            Valoramos y apreciamos a nuestros beneficiados. El desarrollo social y sostenible no es sólo un acto 
-            de justicia sino también el compromiso que asiste a todos quienes queremos derrotar la inequidad en Colombia.
+            Nuestra gestión está siempre orientada a la excelencia. No sólo nos mueven las buenas intenciones y las firmes convicciones sino 
+            también las acciones efectivas. Nuestros resultados son testimonio de ello.
         </p>
     </div>
     <div class="grid sm:grid-rows-1 sm:grid-cols-2 justify-center items-center">
@@ -70,7 +70,7 @@
 {{  $slot  }}
 <section class="w-full max-w-6xl mx-auto mt-10 flex flex-col sm:flex-row justify-center items-center" aria-label="¿Que hacemos en el Banco de Alimentos de Bogotá">
     <div class="w-full sm:w-1/2 px-4 py-2">
-        <h3 class="text-center text-red-bab font-bold mb-4">Trabajando con el Corazón</h3>
+        <h3 class="text-center text-red-bab font-bold mb-4 text-3xl">Trabajando con el Corazón</h3>
         <p class="text-justify text-gray-600">
             El Banco de Alimentos de Bogotá, no sólo nutrimos cuerpos y alimentamos esperanzas, sino que también movilizamos a todas las 
             personas de buen corazón y conciencia social. Estamos convencidos que garantizar una alimentación adecuada es un compromiso 

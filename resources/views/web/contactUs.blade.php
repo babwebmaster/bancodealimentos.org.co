@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('content')
     <main class="pt-[76.6px]">
-        <h1 class="mt-5 text-center pb-2 font-bold text-red-bab">Contactanos</h1>
+        <h1 class="mt-5 text-center pb-2 font-bold text-red-bab text-4xl">Contactanos</h1>
         <span class="block h-2 w-40 bg-bab rounded-full mx-auto mb-8"></span>
         <div class="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-around bg-contact-us md:py-8 md:px-4 md:mb-4">
             <div class="flex flex-col justify-around items-center my-2 md:my-8">
@@ -33,9 +33,9 @@
                 <span class="mx-auto bg-gray-100 shadow-xl shadow-gray-500 p-4 my-4 rounded-full">
                     <i class="font-bold text-2xl leading-6 text-red-bab fa-regular fa-face-grin-stars"></i>
                 </span>
-                <h4 class="mx-auto text-bab font-bold text-2xl md:text-4xl text-center uppercase">Gracias por tu ayuda</h4>
+                <h4 class="mx-auto text-bab font-bold text-2xl md:text-4xl text-center uppercase my-6">Gracias por tu ayuda</h4>
                 <hr class="w-full bg-bab">
-                <h6 class=" text-lg">Síguenos en nuestras redes sociales</h6>
+                <h6 class=" text-lg my-4">Síguenos en nuestras redes sociales</h6>
                 <div class="w-full flex justify-between">
                     <a href="https://es-la.facebook.com/Bancodealimentosbogota/" title="Facebook">
                         <i class="font-bold text-2xl md:text-4xl text-bab fa-brands fa-facebook"></i>
@@ -64,12 +64,12 @@
         <div class="w-full bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-700 md:mt-16 md:mb-36 p-4 md:p-0">
             <div class="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-evenly">
                 <div class="lg:basis-1/2 p-4 my-8">
-                    <h3 class="text-white text-center">¿QUIERES ESCRIBIRNOS?</h3>
+                    <h3 class="text-white text-center text-2xl">¿QUIERES ESCRIBIRNOS?</h3>
                 </div>
                 <div class="lg:basis-1/2  relative">
                     <form class="md:absolute md:z-10 md:left-0 top-1/2 md:-translate-y-1/2 w-full flex flex-col mx-auto bg-glass-blue-bab py-2 px-4" action="" x-data="{accept : false}">
                         <div class="my-3">  
-                            <h3 class="text-center font-bold text-white text-shadow">{{  __('¡Contactanos!')  }}</h3>
+                            <h3 class="text-center font-bold text-white text-shadow text-2xl">{{  __('¡Contactanos!')  }}</h3>
                         </div>
                         <div class="mb-2">
                             <x-jet-label class="text-shadow text-white" for="names" value="{{ __('Nombres Completos') }}" />
@@ -99,12 +99,5 @@
             </div>
         </div>
         <div class="hidden md:block h-16"></div>
-    </section>
-    <section class="bg-gray-200 md:mt-8 py-8" aria-label="Blog del Banco de Alimentos de Bogotá">
-        <x-web.title>Blog</x-web.title>
-        <div class="shadow-xl overflow-hidden sm:rounded-lg border-none max-w-7xl m-auto">
-            <x-web.carousel-blog :posts="$posts" />
-        </div>
-        <!-- Slider main container -->
     </section>
 @endsection

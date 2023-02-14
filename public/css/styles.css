@@ -219,7 +219,7 @@ tbody tr td:last-child { border-top-right-radius: 5px; border-bottom-right-radiu
     content:'';
     width: 0; 
     height: 0; 
-    border-left: 15px solid #d1d5db;
+    border-left: 15px solid #e5e7eb;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent; 
     position: absolute;
@@ -233,7 +233,7 @@ tbody tr td:last-child { border-top-right-radius: 5px; border-bottom-right-radiu
     content:'';
     width: 0; 
     height: 0; 
-    border-right: 15px solid #d1d5db;
+    border-right: 15px solid #e5e7eb;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent; 
     position: absolute;
