@@ -36,9 +36,9 @@ const swiperBlog = new Swiper('.swiper.blog', {
     },
   
     // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
+    // scrollbar: {
+    //     el: '.swiper-scrollbar',
+    // },
 });
 
 // window.addEventListener('scroll',()=>{
