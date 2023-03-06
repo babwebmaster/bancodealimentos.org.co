@@ -33,6 +33,11 @@ const swiperBlog = new Swiper('.swiper.blog', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+  
+    // And if we need scrollbar
+    // scrollbar: {
+    //     el: '.swiper-scrollbar',
+    // },
 });
 
 const swiperCarousel = new Swiper('.swiper-carousel', 
