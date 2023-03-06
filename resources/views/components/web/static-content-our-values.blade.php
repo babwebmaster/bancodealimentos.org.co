@@ -1,6 +1,6 @@
 <section class="w-full max-w-6xl mx-auto mt-10" aria-label="Misión, Visión y Valores del Banco de alimentos de bogota">
     <div class="grid sm:grid-rows-2 sm:grid-cols-2 justify-center items-center">
-        <div class="col-span-1 px-4 py-6 bg-gray-200">
+        <div class="col-span-1 px-4 py-10 bg-gray-200">
             <h3 class="text-center text-red-bab font-semibold text-xl">
                 1. CARIDAD Y RESPONSABILIDAD
             </h3>
@@ -10,7 +10,7 @@
                 un alimento de vida.
             </p>
         </div>
-        <div class="col-span-1 px-4 py-6">
+        <div class="col-span-1 px-4 py-10">
             <h3 class="text-center text-red-bab font-semibold text-xl">
                 2. RESPETO CON EQUIDAD
             </h3>
@@ -19,14 +19,14 @@
                 de justicia sino también el compromiso que asiste a todos quienes queremos derrotar la inequidad en Colombia.
             </p>
         </div>
-        <div class="col-span-1 px-4 py-6">
+        <div class="col-span-1 px-4 py-10">
             <h3 class="text-center text-red-bab font-semibold text-xl">3. COMPROMISO SOCIAL</h3>
             <p class="text-left text-gray-500 px-2">
                 En el Banco de Alimentos, creemos que la generosidad es el camino. Nosotros, nuestros donantes, voluntarios y 
                 productores, tenemos como único objetivo el de garantizar que la alimentación sea un derecho y no un privilegio.
             </p>
         </div>
-        <div class="col-span-1 px-4 py-6 bg-gray-200">
+        <div class="col-span-1 px-4 py-10 bg-gray-200">
             <h3 class="text-center text-red-bab font-semibold text-xl">4. TRANSPARENCIA Y HONESTIDAD</h3>
             <p class="text-left text-gray-500 px-2">
                 La totalidad de nuestros actos son el reflejo de lo que somos. Derrotar el hambre es una exigencia ética para 
@@ -34,7 +34,7 @@
             </p>
         </div>
     </div>
-    <div class="aspect-video flex justify-center items-cenetr flex-col bg-our-values px-4 py-6">
+    <div class="aspect-video flex justify-center items-cenetr flex-col bg-our-values px-4 py-10">
         <h3 class="text-center text-red-bab font-semibold text-xl uppercase text-shadow">
             5. Compromiso con efectividad
         </h3>
@@ -44,7 +44,7 @@
         </p>
     </div>
     <div class="grid sm:grid-rows-1 sm:grid-cols-2 justify-center items-center">
-        <div class="col-span-1 px-4 py-6 bg-gray-200">
+        <div class="col-span-1 px-4 py-10 bg-gray-200">
             <h3 class="text-center text-red-bab font-semibold text-xl">
                 MISIÓN
             </h3>
@@ -55,7 +55,7 @@
                 integral sin generar una cultura de mendicidad.
             </p>
         </div>
-        <div class="col-span-1 px-4 py-6">
+        <div class="col-span-1 px-4 py-10">
             <h3 class="text-center text-red-bab font-semibold text-xl">
                 VISIÓN
             </h3>

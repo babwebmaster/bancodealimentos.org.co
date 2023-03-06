@@ -15,22 +15,22 @@
             <span class="text-gray-300 mx-2"> | </span>
         </div>
         <div class="flex justify-end basis-1/2">
-            <a href="#" class="flex justify-start align-items-center px-5 bg-red-700">
-                <span class="text-white text-lg font-bold">Dona ya!</span>
+            <a href="#" class="flex justify-start items-center px-20 bg-red-700 shadow-lg  shadow-black">
+                <span class="text-white text-xl font-extrabold">Dona ya!</span>
             </a>
-            <div class="flex justify-around text-slate-400 hover:text-slate-50 ml-4 mr-8  py-2">
+            <div class="flex justify-between gap-2 items-center text-slate-400 hover:text-slate-50 ml-4 mr-8  py-2">
                 <span class="text-slate-50 text-sm">
                     Escribenos
-                    <a href="http://" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-50">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-50">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-50">
-                        <i class="fab fa-instagram"></i>
-                    </a>
                 </span>
+                <a href="http://" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-50">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="http://" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-50">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="http://" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-50">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
         </div>
     </div>

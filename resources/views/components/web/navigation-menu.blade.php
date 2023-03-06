@@ -1,5 +1,5 @@
-<nav class="menu-home h-20" x-data="{ open : false }">
-    <div class="flex justify-between px-3">
+<nav class="menu-home h-20 lg:flex lg:items-center lg:justify-between" x-data="{ open : false }">
+    <div class="flex justify-between px-3 lg:w-full">
         <a class="lg:basis-1/3 navbar-brand" href="#">
             <figure class="mb-0">
                 <img src="{{ asset('images/Logo-Horizontal-Blanco-y-rojo.png') }}" alt="{{-- $altLogo --}}" class=" w-52">

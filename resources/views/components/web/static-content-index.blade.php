@@ -16,7 +16,7 @@
 </section>
 <section data-sectionId="que_hace_el_banco" class="bg-white pb-16">
     <div class="max-w-7xl my-0 mx-auto">
-        <h2 class="text-center pt-8 md:pt-16 pb-2 font-bold text-red-bab">¿Qué hace el Banco de Alimentos?</h2>
+        <h2 class="text-center pt-8 md:pt-16 pb-2 font-bold text-red-bab text-4xl">¿Qué hace el Banco de Alimentos?</h2>
         <span class="block h-2 w-40 bg-bab rounded-full mx-auto mb-8"></span>
         <div class="block md:flex md:justify-around md:items-center">
             <div class="w-full md:w-1/2 p-4">
@@ -39,8 +39,8 @@
                     sino también esperanza y trabajamos para desarrollar las competencias y habilidades de las organizaciones vinculadas, 
                     encaminados en construir una sociedad más humana, solidaria y equitativa.
                 </p>
-                <p class="text-center font-base font-mono text-2xl text-red-bab">#JUNTOSCONTRAELHAMBRE</p>
-                <a href="{{Route('web.ourValues')}}" class="py-3 px-8 bg-red-600 text-white block mx-auto no-underline font-semibold text-lg text-center w-48">Leer más</a>
+                <p class="text-center font-base font-mono text-2xl text-red-bab my-2">#JUNTOSCONTRAELHAMBRE</p>
+                <a href="{{Route('web.ourValues')}}" class="py-3 px-8 bg-red-600 border-2 border-transparent text-white block mx-auto no-underline font-semibold text-lg text-center w-48 hover:bg-red-500 focus:border-red-400">Leer más</a>
             </div>
             <div class="w-full md:w-1/2 flex justify-center items-center">
                 <video controls src="https://www.bancodealimentos.org.co/wp-content/uploads/2020/12/JingleVideo.mp4">
