@@ -4,6 +4,7 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use App\Models\web\Cifras;
+use App\Models\web\Directors;
 use App\Models\web\Reconocimientos;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -34,7 +35,8 @@ class PageController extends Controller
 
     public function ourLeaders()
     {
-        return view('web.ourLeaders');
+        $directors = Directors::all();
+        return view('web.ourLeaders', compact('directors'));
     }
 
     public function managementReports()

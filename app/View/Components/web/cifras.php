@@ -4,16 +4,17 @@ namespace App\View\Components\web;
 
 use Illuminate\View\Component;
 
-class cifras extends Component
+class Cifras extends Component
 {
+    public $cifras;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($cifras)
     {
-        //
+        $this->cifras = $cifras;
     }
 
     /**

@@ -1,20 +1,20 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\web;
 
 use Illuminate\View\Component;
 
-class CarouselDonors extends Component
+class Directors extends Component
 {
-    public $slideDonor;
+    public $directors;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($slideDonor)
+    public function __construct($directors)
     {
-        $this->slideDonor = $slideDonor;
+        $this->directors = $directors;
     }
 
     /**
@@ -24,6 +24,6 @@ class CarouselDonors extends Component
      */
     public function render()
     {
-        return view('components.carousel-donors');
+        return view('components.web.directors');
     }
 }

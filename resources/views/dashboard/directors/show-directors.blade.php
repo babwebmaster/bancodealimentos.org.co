@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('messages.Dashboard') }}
         </h2>
-        <a href="{{$prev}}" target="_blank" rel="noopener noreferrer">regresar</a>
+        <a href="{{$prev}}" rel="noopener noreferrer">regresar</a>
     </x-slot>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

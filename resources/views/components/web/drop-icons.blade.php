@@ -1,5 +1,3 @@
-@props(['reconocimiento'])
-
 <div x-data="{
         open: false,
         list()

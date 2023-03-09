@@ -1,4 +1,3 @@
-@props(['cifras'])
 <div {{ $attributes->merge(['class' => "w-full mx-auto my-2 px-2 py-6 bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-700 flex flex-col lg:flex-row justify-center items-center md:justify-around"]) }}>
     @foreach ($cifras as $cifra)
         <div class="overflow-hidden w-full text-center">

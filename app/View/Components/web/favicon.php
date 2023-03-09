@@ -4,7 +4,7 @@ namespace App\View\Components\web;
 
 use Illuminate\View\Component;
 
-class favicon extends Component
+class Favicon extends Component
 {
     /**
      * Create a new component instance.

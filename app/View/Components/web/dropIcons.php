@@ -4,16 +4,17 @@ namespace App\View\Components\web;
 
 use Illuminate\View\Component;
 
-class dropIcons extends Component
+class DropIcons extends Component
 {
+    public $reconocimiento;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($reconocimiento)
     {
-        //
+        $this->reconocimiento = $reconocimiento;
     }
 
     /**

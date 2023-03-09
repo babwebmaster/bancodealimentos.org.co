@@ -1,4 +1,3 @@
-@props(['reconocimientos'])
 <div class="grid grid-rows-1 gap-3 sm:gap-6 grid-cols-[10fr_1fr_10fr] timeline ">
     @foreach ($reconocimientos as $r)
         @if ($loop->iteration % 2 != 0)

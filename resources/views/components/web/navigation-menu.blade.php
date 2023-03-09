@@ -83,7 +83,7 @@
                     </div>
                 </x-slot>
             </x-web.dropdown>
-            <x-web.nav-link class=" whitespace-nowrap no-underline hover:text-white" href="#">
+            <x-web.nav-link class=" whitespace-nowrap no-underline hover:text-white" href="#" >
                 {{ __('Regala Generosidad') }}
             </x-web.nav-link>
             <x-web.nav-link class=" whitespace-nowrap no-underline hover:text-white" href="{{  route('web.contactUs')  }}" :active="request()->routeIs('web.contactUs')">
@@ -111,7 +111,7 @@
         </button>
     </div>
     <ul  class="lg:hidden w-full flex-col items-center justify-center py-4 pl-0 bg-bab mb-0" x-show="open" :class="open ? 'flex': 'hidden'" x-transition.duration.500ms>
-        <x-web.nav-link class=" whitespace-nowrap no-underline hover:text-white" href="{{  route('web.index')  }}">
+        <x-web.nav-link class=" whitespace-nowrap no-underline hover:text-white" href="{{  route('web.index')  }}" >
                     {{ __('Inicio') }}
         </x-web.nav-link>
         <x-web.dropdown align="center" width="60">
@@ -133,7 +133,7 @@
         </x-web.dropdown>
         <x-web.dropdown align="center" width="60">
             <x-slot name="trigger">
-                <x-web.nav-link class=" cursor-pointer whitespace-nowrap no-underline hover:text-white">
+                <x-web.nav-link class=" cursor-pointer whitespace-nowrap no-underline hover:text-white" >
                     {{ __('Ayúdanos a ayudar') }} &nbsp;
                     <i x-show="!open" class="fas fa-caret-down"></i>
                     <i x-show="open" class="fas fa-caret-up"></i>
@@ -155,7 +155,7 @@
         </x-web.dropdown>
         <x-web.dropdown align="center" width="60">
             <x-slot name="trigger">
-                <x-web.nav-link class=" cursor-pointer whitespace-nowrap no-underline hover:text-white">
+                <x-web.nav-link class=" cursor-pointer whitespace-nowrap no-underline hover:text-white" >
                     {{ __('Beneficiarios') }} &nbsp;
                     <i x-show="!open" class="fas fa-caret-down"></i>
                     <i x-show="open" class="fas fa-caret-up"></i>
@@ -173,7 +173,7 @@
         </x-web.dropdown>
         <x-web.dropdown align="center" width="96">
             <x-slot name="trigger">
-                <x-web.nav-link class=" cursor-pointer whitespace-nowrap no-underline hover:text-white">
+                <x-web.nav-link class=" cursor-pointer whitespace-nowrap no-underline hover:text-white" >
                     {{ __('Blog') }} &nbsp;
                     <i x-show="!open" class="fas fa-caret-down"></i>
                     <i x-show="open" class="fas fa-caret-up"></i>

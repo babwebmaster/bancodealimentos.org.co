@@ -4,7 +4,7 @@ namespace App\View\Components\web;
 
 use Illuminate\View\Component;
 
-class title extends Component
+class Title extends Component
 {
     /**
      * Create a new component instance.

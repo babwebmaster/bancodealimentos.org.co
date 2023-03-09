@@ -4,7 +4,7 @@ namespace App\View\Components\web;
 
 use Illuminate\View\Component;
 
-class buttonWhatsapp extends Component
+class ButtonWhatsapp extends Component
 {
     /**
      * Create a new component instance.

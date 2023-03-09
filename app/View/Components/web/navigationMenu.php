@@ -4,7 +4,7 @@ namespace App\View\Components\web;
 
 use Illuminate\View\Component;
 
-class navigationMenu extends Component
+class NavigationMenu extends Component
 {
     /**
      * Create a new component instance.
