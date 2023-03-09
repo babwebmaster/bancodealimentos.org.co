@@ -3,10 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\web\CategoryCifras;
 use App\Models\web\Cifras;
-use App\Models\web\CifrasCatCif;
 use App\Models\web\CifrasCategoryCifra;
+use App\Models\web\Directors;
 use App\Models\web\Reconocimientos;
 use App\Models\web\SlideMain;
 use App\Models\web\SlideDonors;
@@ -29,5 +28,6 @@ class DatabaseSeeder extends Seeder
         Cifras::factory(9)->create();
         CifrasCategoryCifra::factory(10)->create();
         Reconocimientos::factory(10)->create();
+        Directors::factory(9)->create();
     }
 }

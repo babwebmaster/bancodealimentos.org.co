@@ -1,5 +1,5 @@
 <section class="flex justify-center items-center bg-white p-4">
-    <div class="flex flex-col md:flex-row justify-center items-center md:justify-around p-4" style="max-width:1440px; width:100%;margin:0 auto;">
+    <div class="flex flex-col md:flex-row justify-center items-center md:justify-around p-4 max-w-[1440px] w-full my-0 mx-auto">
         <x-web.card-index class="rounded-tl-2xl rounded-br-2xl" style="background: url('http://bancodealimentos.org.co.test/images/bonos-de-generosidad.png');">
             <x-slot:title>Bonos de Generosidad</x-slot>
             <x-slot:textButton>Saber Más</x-slot>

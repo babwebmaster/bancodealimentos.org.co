@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <h1 class="text-center font-bold text-3xl mb-4 text-bab">{{ __('messages.Preview') }}</h1>
-            <x-web.cifras :cifras="$cifras"/>
+        <x-web.cifras :cifras="$cifras"/>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- component table --}}
             @livewire('search-cifras', ['cifras' => $cifras])

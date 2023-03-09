@@ -68,22 +68,22 @@
         @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
          <!-- sweet scripts end-->
         @livewireScripts
-        @if (Route::is('slide.create') || Route::is('slide.edit'))  
+        @if (in_array(Route::currentRouteName(),['slide.create', 'slide.edit', 'slide.index']))  
             <script src="{{ asset('js/dashboard.slide.js') }}"></script>
         @endif
-        @if (Route::is('slide-donors.create') || Route::is('slide-donors.edit'))
+        @if (in_array(Route::currentRouteName(),['slide-donors.create', 'slide-donors.edit']))
             <script src="{{ asset('js/dashboard.slideDonors.js') }}"></script>
         @endif
-        @if (Route::is('slide-donors.index'))
+        @if (in_array(Route::currentRouteName(),['slide-donors.index']))
         <script src="{{ asset('js/dashboard.slideDonors.index.js') }}"></script>
         @endif
-        @if (Route::is('cifras.create') || Route::is('cifras.edit'))
+        @if (in_array(Route::currentRouteName(),['cifras.create', 'cifras.edit']))
             <script src="{{ asset('js/dashboard.cifras.js') }}"></script>
         @endif
-        @if (Route::is('cifras.index'))
+        @if (in_array(Route::currentRouteName(),['cifras.index']))
             <script src="{{ asset('js/dashboard.cifras.index.js') }}"></script>
         @endif
-        @if (Route::is('reconocimientos.create') || Route::is('reconocimientos.edit'))
+        @if (in_array(Route::currentRouteName(),['reconocimientos.create', 'reconocimientos.edit']))
             <script src="{{ asset('js/dashboard.reconocimientos.js') }}"></script>
         @endif
     </body>

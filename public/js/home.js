@@ -39,7 +39,6 @@ const swiperBlog = new Swiper('.swiper.blog', {
     //     el: '.swiper-scrollbar',
     // },
 });
-
 const swiperCarousel = new Swiper('.swiper-carousel', 
     {
         // Optional parameters

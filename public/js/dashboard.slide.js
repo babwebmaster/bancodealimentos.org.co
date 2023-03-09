@@ -56,3 +56,23 @@ const imagePreview = (preview, source , error) => {
     preview.classList.add('block');
     error.innerHTML="";
 }
+const swiperCarousel = new Swiper('.swiper-carousel', 
+    {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        autoplay: {
+            delay: 4000,
+        },
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination.carousel',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next.carousel',
+            prevEl: '.swiper-button-prev.carousel',
+        }
+    }
+);
