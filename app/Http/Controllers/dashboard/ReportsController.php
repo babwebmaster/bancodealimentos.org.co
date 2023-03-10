@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\web\Directors;
+use App\Models\web\Reports;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class DirectorsController extends Controller
+class ReportsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class DirectorsController extends Controller
      */
     public function index()
     {
-        $directors = Directors::all();
-        return view('dashboard.directors.index-directors', compact('directors'));
+        $reports = Reports::all();
+        return view('dashboard.reports.index-reports', compact('reports'));
     }
 
     /**
@@ -27,8 +27,8 @@ class DirectorsController extends Controller
      */
     public function create()
     {
-        $director = new Directors();
-        return view('dashboard.directors.create-directors', compact('director'));
+        $report = new Reports();
+        return view('dashboard.reports.create-reports', compact('report'));
     }
 
     /**
@@ -40,84 +40,85 @@ class DirectorsController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'nullable|min:3|max:50|string',
-            'name' => 'required|min:3|max:50|string',
+            'name' => 'min:3|max:100|string',
             'image' => 'mimes:jpg,jpeg,png|max:2048',
-            'description' => 'nullable|string',
+            'linkSpanish' => 'required|min:3|max:100|string',
+            'linkEnglish' => 'nullable|min:3|max:100|string',
+            'linkFrench' => 'nullable|min:3|max:100|string',
         ]);
         if(isset($validated["image"])){
             $fileName = env('APP_URL')."images"."/".'d-'.time().'.'.$validated["image"]->getClientOriginalName().$validated["image"]->extension();
             $validated["image"]=$fileName;
             $request->image->move(public_path("images"), $fileName);
         }
-        Directors::create($validated);
-        session()->flash('flash.banner', 'Directivo Creado Correctamente!');
+        Reports::create($validated);
+        session()->flash('flash.banner', 'Informe Creado Correctamente!');
         session()->flash('flash.bannerStyle', 'success');
-        return to_route('directors.index');
+        return to_route('reports.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\web\Directors  $director
+     * @param  \App\Models\web\Reports  $report
      * @return \Illuminate\Http\Response
      */
-    public function show(Directors $director)
+    public function show(Reports $report)
     {
-        $prev = redirect()->getUrlGenerator()->previous();
-        return view('dashboard.directors.show-directors', compact('director','prev'));
+        return view('dashboard.reports.show-reports', compact('report'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\web\Directors  $director
+     * @param  \App\Models\web\Reports  $report
      * @return \Illuminate\Http\Response
      */
-    public function edit(Directors $director)
+    public function edit(Reports $report)
     {
-        return view('dashboard.directors.edit-directors', compact('director'));
+        return view('dashboard.reports.edit-reports', compact('report'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\web\Directors  $director
+     * @param  \App\Models\web\Reports  $report
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Directors $director)
+    public function update(Request $request, Reports $report)
     {
         $validated = $request->validate([
-            'title' => 'nullable|min:3|max:50|string',
-            'name' => 'required|min:3|max:50|string',
+            'name' => 'min:3|max:100|string',
             'image' => 'mimes:jpg,jpeg,png|max:2048',
-            'description' => 'nullable|string',
+            'linkSpanish' => 'required|min:3|max:100|string',
+            'linkEnglish' => 'sometimes|nullable|min:3|max:100|string',
+            'linkFrench' => 'sometimes|nullable|min:3|max:100|string',
         ]);
         if(isset($validated["image"])){
             $fileName = env('APP_URL')."images"."/".'d-'.time().'.'.$validated["image"]->getClientOriginalName().$validated["image"]->extension();
             $validated["image"]=$fileName;
             $request->image->move(public_path("images"), $fileName);
         }
-        $director->update($validated);
-        Alert::toast('Directivo Editado Correctamente!', 'success');
-        return to_route('directors.index');
+        $report->update($validated);
+        Alert::toast('Informe Editado Correctamente!', 'success');
+        return to_route('reports.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\web\Directors  $director
+     * @param  \App\Models\web\Reports  $report
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Directors $director)
+    public function destroy(Reports $report)
     {
-        $delete = $director->delete();
+        $delete = $report->delete();
         if($delete){
-            Alert::alert('Exito', 'Directivo  Eliminado Correctamente!', 'success');
+            Alert::alert('Exito', 'Reconocimiento  Eliminado Correctamente!', 'success');
         }else{
             Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
         }
-        return to_route("directors.index");
+        return to_route("reports.index");
     }
 }

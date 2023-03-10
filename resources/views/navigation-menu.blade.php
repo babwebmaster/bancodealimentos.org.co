@@ -150,6 +150,9 @@
                     <x-jet-nav-link href="{{ route('directors.index') }}" :active="request()->routeIs('directors.index') || request()->routeIs('directors.show') || request()->routeIs('directors.create') || request()->routeIs('directors.edit')">
                         {{ __('messages.Directors') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.index') || request()->routeIs('reports.show') || request()->routeIs('reports.create') || request()->routeIs('reports.edit')">
+                        {{ __('messages.Reports') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
             
@@ -256,6 +259,9 @@
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('directors.index') }}" :active="request()->routeIs('directors.index') || request()->routeIs('directors.show') || request()->routeIs('directors.create') || request()->routeIs('directors.edit')">
                     {{ __('messages.Directors') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.index') || request()->routeIs('reports.show') || request()->routeIs('reports.create') || request()->routeIs('reports.edit')">
+                    {{ __('messages.Reports') }}
                 </x-jet-responsive-nav-link>
             </div>
         </div>

@@ -7,6 +7,7 @@ use App\Models\web\Cifras;
 use App\Models\web\CifrasCategoryCifra;
 use App\Models\web\Directors;
 use App\Models\web\Reconocimientos;
+use App\Models\web\Reports;
 use App\Models\web\SlideMain;
 use App\Models\web\SlideDonors;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -29,5 +30,6 @@ class DatabaseSeeder extends Seeder
         CifrasCategoryCifra::factory(10)->create();
         Reconocimientos::factory(10)->create();
         Directors::factory(9)->create();
+        Reports::factory(6)->create();
     }
 }
