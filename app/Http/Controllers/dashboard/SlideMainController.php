@@ -143,21 +143,4 @@ class SlideMainController extends Controller
         Alert::toast('Slide Editado Correctamente!', 'success');
         return to_route('slide.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\web\SlideMain  $slide
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(SlideMain $slide)
-    {
-        $delete = $slide->delete();
-        if($delete){
-            Alert::toast('Slider Eliminado Correctamente!', 'success');
-        }else{
-            Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
-        }
-        return to_route("slide.index");
-    }
 }

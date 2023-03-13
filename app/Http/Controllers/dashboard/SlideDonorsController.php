@@ -108,20 +108,5 @@ class SlideDonorsController extends Controller
         return to_route('slide-donors.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\web\SlideDonors  $slideDonor
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(SlideDonors $slideDonor)
-    {
-        $delete = $slideDonor->delete();
-        if($delete){
-            Alert::alert('Exito', 'Slider Nuestros Donantes Eliminado Correctamente!', 'success');
-        }else{
-            Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
-        }
-        return to_route("slide-donors.index");
-    }
+
 }

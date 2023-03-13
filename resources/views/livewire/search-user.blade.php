@@ -25,81 +25,61 @@
                     <th class="px-4 py-2 text-left bg-gray-200">{{  __('messages.Actions')  }}</th>
                 </tr>
             </thead>
-            {{-- @if (!empty($search)) --}}
-                <tbody class="text-sm font-normal text-gray-700">
-                    @forelse ($users as $u)
-                        <tr class=" border-b border-gray-200 py-10">
-                            <td class="px-4 py-4">
-                                {{  $u->id  }}
-                            </td>
-                            <td class="px-4 py-4" width="200px">
-                                <img class="rounded-full block w-16 h-16" src="{{  $u->profile_photo_url  }}" alt="{{  $u->name  }}">
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $u->name  }}
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $u->email  }}
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $u->created_at->format('d M y')  }}
-                            </td>
-                            <td class="px-4 py-4 flex justify-around gap-2">
-                                <a href="{{  route('user.show', $u)  }}" class="inline-flex items-center px-4 py-2 bg-sky-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-700 active:bg-sky-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Show')  }}"><i class="fa-solid fa-eye"></i></a>
-                                <a href="{{  route('user.edit', $u)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <form action="{{  route('user.destroy', $u)  }}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr class=" border-b border-gray-200 py-10">
-                            <td class="px-4 py-4">
-                                No hay registros
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
-                {{-- <div id="pagination" class="w-full flex justify-center border-t border-gray-100 pt-4 items-center">
-                    {{  $users->links()  }}
-                </div> --}}
-            {{-- @else
-                <tbody class="text-sm font-normal text-gray-700">
-                    @foreach ($users as $u)
-                        <tr class=" border-b border-gray-200 py-10">
-                            <td class="px-4 py-4">
-                                {{  $u->id  }}
-                            </td>
-                            <td class="px-4 py-4" width="200px">
-                                <img class="rounded-full block w-16 h-16" src="{{  $u->profile_photo_url  }}" alt="{{  $u->name  }}">
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $u->name  }}
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $u->email  }}
-                            </td>
-                            <td class="px-4 py-4">
-                                {{  $u->created_at->format('d M y')  }}
-                            </td>
-                            <td class="px-4 py-4 flex justify-around gap-2">
-                                <a href="{{  route('user.show', $u)  }}" class="inline-flex items-center px-4 py-2 bg-sky-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-700 active:bg-sky-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Show')  }}"><i class="fa-solid fa-eye"></i></a>
-                                <a href="{{  route('user.edit', $u)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <form action="{{  route('user.destroy', $u)  }}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            @endif --}}
+            <tbody class="text-sm font-normal text-gray-700">
+                @forelse ($users as $u)
+                    <tr class=" border-b border-gray-200 py-10">
+                        <td class="px-4 py-4">
+                            {{  $u->id  }}
+                        </td>
+                        <td class="px-4 py-4" width="200px">
+                            <img class="rounded-full block w-16 h-16" src="{{  $u->profile_photo_url  }}" alt="{{  $u->name  }}">
+                        </td>
+                        <td class="px-4 py-4">
+                            {{  $u->name  }}
+                        </td>
+                        <td class="px-4 py-4">
+                            {{  $u->email  }}
+                        </td>
+                        <td class="px-4 py-4">
+                            {{  $u->created_at->format('d M y')  }}
+                        </td>
+                        <td class="px-4 py-4 flex justify-around gap-2">
+                            <a href="{{  route('user.show', $u)  }}" class="inline-flex items-center px-4 py-2 bg-sky-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-700 active:bg-sky-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Show')  }}"><i class="fa-solid fa-eye"></i></a>
+                            <a href="{{  route('user.edit', $u)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <div wire:click="showModal({{$u->id}})" wire:loading.attr="disabled" class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </td>
+                    </tr>
+                @empty
+                    <tr class=" border-b border-gray-200 py-10">
+                        <td class="px-4 py-4">
+                            No hay registros
+                        </td>
+                    </tr>
+                @endforelse
+            </tbody>
         </table>
         <div id="pagination" class="w-full flex justify-center border-t border-gray-100 pt-4 items-center">
             {{  $users->links()  }}
         </div>
+    </div>
+    <div>
+        <x-jet-confirmation-modal wire:model="showingModal">
+            <x-slot name="title">
+                ¡Esta accion no se puede deshacer!
+            </x-slot>
+            <x-slot name="content">
+                <p class="my-6 text-xl font-extrabold text-center">Esta seguro que quiere eliminar este Usuario?</p>
+            </x-slot>
+            <x-slot name="footer">
+                <x-jet-secondary-button wire:click="hideModal" wire:loading.attr="disabled">
+                    {{ __('messages.Cancel') }}
+                </x-jet-secondary-button>
+                <x-jet-danger-button class="ml-3" wire:click="delete()" wire:loading.attr="disabled">
+                    {{ __('messages.Delete') }}
+                </x-jet-danger-button>
+            </x-slot>
+        </x-jet-confirmation-modal>
     </div>
 </div>

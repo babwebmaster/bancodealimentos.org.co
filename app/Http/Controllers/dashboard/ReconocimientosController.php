@@ -128,21 +128,4 @@ class ReconocimientosController extends Controller
         Alert::toast('Reconocimiento Editado Correctamente!', 'success');
         return to_route('reconocimientos.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\web\Reconocimientos  $reconocimiento
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Reconocimientos $reconocimiento)
-    {
-        $delete = $reconocimiento->delete();
-        if($delete){
-            Alert::alert('Exito', 'Reconocimiento  Eliminado Correctamente!', 'success');
-        }else{
-            Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
-        }
-        return to_route("reconocimientos.index");
-    }
 }

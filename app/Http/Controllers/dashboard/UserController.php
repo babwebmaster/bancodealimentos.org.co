@@ -99,25 +99,4 @@ class UserController extends Controller
         // Alert::toast('Usuario Editado Correctamente!', 'success');
         return to_route('user.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    { 
-        $delete = $user->delete();
-        if($delete){
-            Alert::toast('Usuario Eliminado Correctamente!', 'success');
-        }else{
-            Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
-        }
-        return to_route("user.index");
-        // session()->flash('flash.banner', 'Usuario Eliminado Correctamente!');
-        // session()->flash('flash.bannerStyle', 'success');
-        // Alert::alert('Exito', 'Usuario Eliminado Correctamente!', 'success');
-    }
-
 }

@@ -42,11 +42,9 @@
                         <td class="px-4 py-4 flex justify-around gap-2">
                             <a href="{{  route('slide-donors.show', $s)  }}" class="inline-flex items-center px-4 py-2 bg-sky-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-700 active:bg-sky-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Show')  }}"><i class="fa-solid fa-eye"></i></a>
                             <a href="{{  route('slide-donors.edit', $s)  }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Edit')  }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <form action="{{  route('slide-donors.destroy', $s)  }}" method="post">
-                                @method('DELETE')
-                                @csrf
-                                <button type="submit" class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}"><i class="fa-solid fa-trash-can"></i></button>
-                            </form>
+                            <div wire:click="showModal({{$s->id}})" wire:loading.attr="disabled" class="show_confirm inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="{{  __('messages.Delete')  }}">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
                         </td>
                     </tr>
                 @empty
@@ -61,5 +59,23 @@
         <div id="pagination" class="w-full flex justify-center border-t border-gray-100 pt-4 items-center">
             {{  $slideDonor->links()  }}
         </div>
+    </div>
+    <div>
+        <x-jet-confirmation-modal wire:model="showingModal">
+            <x-slot name="title">
+                ¡Esta accion no se puede deshacer!
+            </x-slot>
+            <x-slot name="content">
+                <p class="my-6 text-xl font-extrabold text-center">Esta seguro que quiere eliminar este Slide Donante?</p>
+            </x-slot>
+            <x-slot name="footer">
+                <x-jet-secondary-button wire:click="hideModal" wire:loading.attr="disabled">
+                    {{ __('messages.Cancel') }}
+                </x-jet-secondary-button>
+                <x-jet-danger-button class="ml-3" wire:click="delete()" wire:loading.attr="disabled">
+                    {{ __('messages.Delete') }}
+                </x-jet-danger-button>
+            </x-slot>
+        </x-jet-confirmation-modal>
     </div>
 </div>

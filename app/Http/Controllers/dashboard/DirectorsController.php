@@ -103,21 +103,4 @@ class DirectorsController extends Controller
         Alert::toast('Directivo Editado Correctamente!', 'success');
         return to_route('directors.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\web\Directors  $director
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Directors $director)
-    {
-        $delete = $director->delete();
-        if($delete){
-            Alert::alert('Exito', 'Directivo  Eliminado Correctamente!', 'success');
-        }else{
-            Alert::alert('Error', 'No se puedo eliminar, por favor intentelo de nuevo.', 'error');
-        }
-        return to_route("directors.index");
-    }
 }
