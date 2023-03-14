@@ -1,6 +1,6 @@
 @extends('layouts.web', ['posts' => $posts])
 @section('content')
-    <main class="pt-[76.6px] bg-bab">
+    <main class="pt-[76.6px] bg-bab overflow-hidden">
         <x-web.carousel :sliders="$sliders" />
     </main>
     <x-web.static-content-index />

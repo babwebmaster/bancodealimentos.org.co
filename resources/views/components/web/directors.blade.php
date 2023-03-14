@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-around items-center gap-4 my-8">
+<div class="flex flex-col md:flex-row flex-wrap justify-center md:justify-around items-center px-8 md:px-2 gap-4 my-8">
     @foreach ($directors as $d)
         <div class=" basis-3/12"> 
             <figure class="m-0 p-2">

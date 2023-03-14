@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-around items-center gap-4 my-8">
+<div class="flex flex-col md:flex-row md:flex-wrap justify-center md:justify-around items-center gap-4 my-8">
     @foreach ($reports as $r)
         <div class="basis-3/12">
             <h3 class="text-center font-extrabold text-gray-600 text-2xl">{{  $r->name  }}</h3>

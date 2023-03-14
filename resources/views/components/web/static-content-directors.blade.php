@@ -1,4 +1,4 @@
-<div class="my-16">
+<div class="my-16 px-8">
     <h3 class="text-center font-extrabold text-4xl text-gray-700 mt-12 mb-6">Director Ejecutivo</h3>
     <div class="flex flex-col md:flex-row gap-4">
         <div class="basis-full md:basis-1/2">

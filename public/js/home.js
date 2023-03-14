@@ -43,10 +43,10 @@ const swiperCarousel = new Swiper('.swiper-carousel',
     {
         // Optional parameters
         direction: 'horizontal',
-        loop: true,
         autoplay: {
             delay: 4000,
         },
+        loop: true,
         // If we need pagination
         pagination: {
             el: '.swiper-pagination.carousel',

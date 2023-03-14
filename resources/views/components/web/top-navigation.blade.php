@@ -1,6 +1,6 @@
-<div class="top-nav d-none d-md-flex justify-content-between align-items-center bg-bab px-md-2 px-lg-5">
-    <div class="max-w-top-nav flex justify-between items-center">
-        <div class="d-flex justify-content-start py-2">
+<div class="top-nav hidden md:flex md:justify-between md:items-center bg-bab md:px-2 lg:px-5">
+    <div class="w-full max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex justify-start py-2">
             <a href="#">
                 <span class="text-slate-400 hover:text-slate-50 text-sm"><i class="fas fa-shopping-cart"></i> Recompensas</span>
             </a>

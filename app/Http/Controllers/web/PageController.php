@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\web\Cifras;
 use App\Models\web\Directors;
 use App\Models\web\Reconocimientos;
+use App\Models\web\Reports;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +42,8 @@ class PageController extends Controller
 
     public function managementReports()
     {
-        return view('web.managementReports');
+        $reports = Reports::all();
+        return view('web.managementReports', compact('reports'));
     }
 
     public function cashDonations()
