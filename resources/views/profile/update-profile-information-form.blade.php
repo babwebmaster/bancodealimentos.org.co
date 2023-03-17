@@ -2,11 +2,9 @@
     <x-slot name="title">
         {{ __('messages.Profile Information') }}
     </x-slot>
-
     <x-slot name="description">
         {{ __('messages.Update your account\'s profile information and email address.') }}
     </x-slot>
-
     <x-slot name="form">
         <!-- Profile Photo -->
         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())

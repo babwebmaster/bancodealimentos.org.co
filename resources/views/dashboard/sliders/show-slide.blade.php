@@ -4,6 +4,7 @@
             {{ __('messages.Dashboard') }}
         </h2>
     </x-slot>
+    {{ Breadcrumbs::render('slide.show', $slide) }}
     <div class="mb-5 lg:flex">
         <div class="max-w-full mx-auto py-1 sm:px-6 lg:px-2 mb-8">
             <div class="bg-white-4/5 py-4 sm:px-6 lg:px-2 mb-8 rounded-lg shadow-md">

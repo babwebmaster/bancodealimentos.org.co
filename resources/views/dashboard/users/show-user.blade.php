@@ -4,6 +4,7 @@
             {{ __('messages.Dashboard') }}
         </h2>
     </x-slot>
+    {{ Breadcrumbs::render('user.show', $user) }}
     <div class="mb-5">
         <div class="max-w-full mx-auto py-1 sm:px-6 lg:px-8">
             <div class="w-full rounded-lg bg-courves-profile">

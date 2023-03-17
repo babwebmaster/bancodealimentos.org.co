@@ -4,10 +4,12 @@
             {{ __('messages.Dashboard') }}
         </h2>
     </x-slot>
+    {{ Breadcrumbs::render('user.create') }}
     <div class="mb-5">
         <div class="max-w-full mx-auto py-1 sm:px-6 lg:px-8 flex flex-column items-center justify-center">
             <form action="{{  route('user.store')  }}" class="px-4 py-4 w-full bg-bab-shadow rounded-md" method="POST">
                 @csrf
+                <h3 class="text-center text-2xl font-bold">{{  __('messages.Create User')  }}</h3>
                 <div class="mb-5">
                     <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
                         {{  __('messages.User Name')  }}

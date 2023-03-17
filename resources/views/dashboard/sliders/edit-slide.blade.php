@@ -4,6 +4,7 @@
             {{ __('messages.Dashboard') }}
         </h2>
     </x-slot>
+    {{ Breadcrumbs::render('slide.edit', $slide) }}
     <div class="mb-5">
         <div class="max-w-full mx-auto py-1 sm:px-6 lg:px-8">
             <form action="{{  route('slide.update', $slide->id)  }}" class="px-4 py-4 w-full md:w-10/12 md:mx-auto bg-white-4/5 rounded-md" method="POST" enctype="multipart/form-data">

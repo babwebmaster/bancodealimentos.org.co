@@ -43,7 +43,6 @@
             <!--menu home-->
             <x-web.navigation-menu />
         </header>
-
         @yield('content')
 
         <section class="bg-gray-200 mt-8 py-8">
