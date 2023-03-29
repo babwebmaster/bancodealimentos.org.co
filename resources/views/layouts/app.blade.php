@@ -86,5 +86,8 @@
         @if (in_array(Route::currentRouteName(),['reconocimientos.create', 'reconocimientos.edit']))
             <script src="{{ asset('js/dashboard.reconocimientos.js') }}"></script>
         @endif
+        @if (in_array(Route::currentRouteName(),['reports.create', 'reports.edit']))
+            <script src="{{ asset('js/dashboard.reports.js') }}"></script>
+        @endif
     </body>
 </html>

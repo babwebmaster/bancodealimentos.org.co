@@ -4,6 +4,7 @@
             {{ __('messages.Dashboard') }} {{ Route::currentRouteName() }}
         </h2>
     </x-slot>
+    {{ Breadcrumbs::render('directors.index') }}
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- component table --}}

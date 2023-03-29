@@ -4,6 +4,7 @@
             {{ __('messages.Dashboard') }}
         </h2>
     </x-slot>
+    {{ Breadcrumbs::render('reports.create', $report) }}
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <form action="{{  route('reports.store', $report->id)  }}" class="px-4 py-4 w-full md:w-3/6 md:mx-auto bg-white-4/5 rounded-md" method="POST" enctype="multipart/form-data">

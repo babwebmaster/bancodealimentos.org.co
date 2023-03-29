@@ -4,7 +4,7 @@
             {{ __('messages.Dashboard') }}
         </h2>
     </x-slot>
-
+    {{ Breadcrumbs::render('reconocimientos.index') }}
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-8">
             @livewire('search-reconocimientos', ['reconocimientos' => $reconocimientos])

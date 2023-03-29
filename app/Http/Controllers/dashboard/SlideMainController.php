@@ -50,21 +50,18 @@ class SlideMainController extends Controller
             'btn_url' => 'exclude_if:btn_status,not|required|url',
             'status' => 'required|string',
         ]);
-        $fileName_desktop = env('APP_URL')."images"."/".'d-'.time().'.'.$validated["content_desktop"]->extension();
-        $validated["content_desktop"]=$fileName_desktop;
-        // dd($fileName);
-        $request->content_desktop->move(public_path("images"), $fileName_desktop);
-
-        $fileName_mobile = env('APP_URL')."images"."/".'m-'.time().'.'.$validated["content_mobile"]->extension();
-        $validated["content_mobile"]=$fileName_mobile;
-        // dd($fileName);
-        $request->content_mobile->move(public_path("images"), $fileName_mobile);
+        $domain = env('APP_URL');
+        $desktop_url = $request->file('content_desktop')->store('images', 'public');
+        $mobile_url = $request->file('content_mobile')->store('images', 'public');
+        $validated['content_desktop'] = $domain . "storage/" . $desktop_url;
+        $validated['content_mobile'] = $domain . "storage/" . $mobile_url;
+        
         SlideMain::create($validated);
+    
         session()->flash('flash.banner', 'Slide Creado Correctamente!');
         session()->flash('flash.bannerStyle', 'success');
-        // Alert::alert('Exito', 'Usuario Creado Correctamente!', 'success');
-        // Alert::toast('Usuario Creado Correctamente!', 'success');
-        return to_route('slide.index');
+    
+        return redirect()->route('slide.index');
     }
 
     /**

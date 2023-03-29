@@ -5,6 +5,7 @@
         </h2>
         <a href="{{$prev}}" rel="noopener noreferrer">regresar</a>
     </x-slot>
+    {{ Breadcrumbs::render('directors.show', $director) }}
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="w-full md:w-1/2 mx-auto">

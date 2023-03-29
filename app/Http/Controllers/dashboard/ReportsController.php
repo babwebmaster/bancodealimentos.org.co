@@ -16,7 +16,7 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        $reports = Reports::all();
+        $reports = Reports::latest()->take(6)->get();;
         return view('dashboard.reports.index-reports', compact('reports'));
     }
 

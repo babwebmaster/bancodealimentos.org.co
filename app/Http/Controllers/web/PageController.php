@@ -42,7 +42,7 @@ class PageController extends Controller
 
     public function managementReports()
     {
-        $reports = Reports::all();
+        $reports = Reports::latest()->take(6)->get();
         return view('web.managementReports', compact('reports'));
     }
 

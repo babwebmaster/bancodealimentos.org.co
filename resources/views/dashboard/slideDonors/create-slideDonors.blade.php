@@ -4,6 +4,7 @@
             {{ __('messages.Dashboard') }}
         </h2>
     </x-slot>
+    {{ Breadcrumbs::render('slide-donors.create') }}
     <div class="mb-5">
         <div class="max-w-full mx-auto py-1 sm:px-6 lg:px-8 flex flex-column items-center justify-center">
             <form action="{{  route('slide-donors.store')  }}" class="px-4 py-4 w-full bg-bab-shadow rounded-md" method="POST" enctype="multipart/form-data">
