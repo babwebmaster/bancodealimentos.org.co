@@ -1,11 +1,14 @@
 <?php
 
-use App\Http\Controllers\dashboard\CategoryCifrasController;
 use App\Http\Controllers\dashboard\CifrasController;
 use App\Http\Controllers\dashboard\DirectorsController;
+use App\Http\Controllers\dashboard\MediosController;
+use App\Http\Controllers\dashboard\ReconocimientosController;
 use App\Http\Controllers\dashboard\ReportsController;
+use App\Http\Controllers\dashboard\SlideDonorsController;
+use App\Http\Controllers\dashboard\SlideMainController;
+use App\Http\Controllers\dashboard\UserController;
 use App\Http\Controllers\web\PageController;
-use App\Models\web\Reconocimientos;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,12 +75,14 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'prefix' => 'dashboa
 
     Route::group(['namespace' => 'App\Http\Controllers\dashboard'], function () {
         Route::resource('user', UserController::class);
+        Route::resource('medios', MediosController::class);
         Route::resource('slide', SlideMainController::class);
         Route::resource('slide-donors', SlideDonorsController::class);
         Route::resource('cifras', CifrasController::class);
         Route::resource('reconocimientos', ReconocimientosController::class);
         Route::resource('directors', DirectorsController::class);
         Route::resource('reports', ReportsController::class);
+        Route::post('medios/crear-directorio', 'MediosController@createDirectory')->name('medios.createNewDirectory');
     });
 
 });
